@@ -7,7 +7,7 @@ Built from the source materials available locally on 2026-06-12.
 - `/Users/aiagent/OneDrive/00_inbox/cvs.zip`
   - Extracted and read the PDF CVs inside `02_2025/`.
   - Useful evidence: FilmPulse website/content/event work, MatchPoint/JA entrepreneurship, IB/education, HubSpot, Young Filmmakers.
-  - Deliberately excluded DiL/DFG family-business material because it is not to be used as real employment for Stavros.
+  - Deliberately excluded family-business material because it is not to be used as real employment for Stavros.
 - `/Users/aiagent/OneDrive/00_inbox/pictures-of-me.zip`
   - Extracted three lecture photos and created editorial crops for hero/supporting images.
 - `/Users/aiagent/OneDrive/00_inbox/pyxi.zip`
@@ -54,14 +54,19 @@ Key style translated rather than copied:
 - cream/lavender background blocks;
 - black testimonial band;
 - thin micro-navigation labels;
-- pill-shaped step labels;
 - image grid with muted editorial photo treatment;
 - large serif explanatory copy paired with heavy grotesk display type;
 - purple accent adapted from the requested accent color.
 
+## 2026-06-13 portfolio copy and structure revision
 
-## 2026-06-14 update
+User feedback: previous copy was too playful/quirky, too freelancer-coded, and too on-the-nose. Removed `proof / steps / aims / let's build`, section micro-headers like `employer-ready` and `purple edition`, repeated presentation photos, duplicate CV buttons, and generic tool labels such as `content ops`.
 
-- User supplied `logos.zip`; extracted Pyxi, FilmPulse, University of York and MatchPoint logos.
-- Normalised the supplied marks into same-size transparent PNG canvases, all white for the Work section: `assets/work-logo-pyxi.png`, `assets/work-logo-filmpulse.png`, `assets/work-logo-york.png`, `assets/work-logo-matchpoint.png`.
-- Added Off The Record as a Study video sample using the full-length source video `/tmp/stavros-portfolio-source/off-record/off_the_record.mp4` (15:10.96). The site uses a web-optimised full-duration encode at `assets/off-the-record-full.mp4`, not a trimmed edit.
+Research checked during the revision:
+- IxDF guidance frames the portfolio and resume as supporting each other, with case-study/project detail doing the heavier evidence work.
+- PhotoSwipe is a responsive JavaScript image gallery/lightbox with zoom and responsive image support.
+- GLightbox is a pure JavaScript lightbox with mobile, video, keyboard, touch and zoom support.
+
+Implementation choice: used a small native `<dialog>` lightbox instead of adding an external gallery dependency. It keeps the static site self-contained, supports click-to-enlarge images and a short video sample, and avoids making visitors guess whether thumbnails are interactive.
+
+Current public structure: `Summary`, `Roles`, `Output`, `Study`, `Projects`, `Contact`. The output section is ready for 8-10 stronger creative assets once provided. Study now prioritizes FilmPulse / Kaleidoscope, the VFX/AI dissertation extract, and an Off The Record short sample; YouthFlick, FilmPulse system and the AI documentary pitch were removed from the page.

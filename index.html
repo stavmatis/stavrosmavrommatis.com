@@ -3,235 +3,181 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Stavros Mavrommatis | Creative Business, Product & Growth</title>
-  <meta name="description" content="Portfolio of Stavros Mavrommatis: creative business graduate, Pyxi product operator, marketing operations and AI/digital workflow builder based in London." />
+  <title>Stavros Mavrommatis | Portfolio & CV</title>
+  <meta name="description" content="Portfolio and web CV for Stavros Mavrommatis: product, marketing, events and creative business work in London." />
   <meta property="og:title" content="Stavros Mavrommatis" />
-  <meta property="og:description" content="Creative business, product, growth and AI/digital operations portfolio." />
+  <meta property="og:description" content="Portfolio and web CV covering product, marketing, events and creative business projects." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/hero.jpg" />
-  <link rel="preload" as="image" href="assets/hero.jpg" />
+  <meta property="og:image" content="assets/speaking-wide.jpg" />
+  <link rel="preload" as="image" href="assets/speaking-wide.jpg" />
   <style>
     :root{
       --ink:#090909;
       --paper:#f1f1e9;
       --paper-2:#e8e7dc;
+      --paper-3:#f8f6ee;
       --lav:#d8cbff;
       --lav-2:#bca7ff;
-      --violet:#7c3cff;
       --muted:#5d5b54;
       --line:rgba(10,10,10,.28);
       --white:#fffdf7;
-      --radius:28px;
-      --max:1180px;
       --display:"Arial Black", Impact, Haettenschweiler, "Helvetica Neue Condensed Black", sans-serif;
       --serif: Georgia, "Times New Roman", serif;
       --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     }
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth;background:var(--lav)}
-    body{margin:0;color:var(--ink);font-family:var(--sans);background:var(--lav);}
+    html{scroll-behavior:smooth;background:var(--paper)}
+    body{margin:0;color:var(--ink);font-family:var(--sans);background:var(--paper)}
     a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .page{max-width:1000px;margin:0 auto;background:var(--paper);box-shadow:0 30px 100px rgba(35,20,80,.18)}
-    .strip{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:start;gap:20px;padding:20px 24px 12px;font-size:9px;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--line)}
-    .strip .center{text-align:center}.strip .right{text-align:right}
-    .hero{padding:14px 24px 0;background:var(--paper)}
-    .hero-title{font-family:var(--display);font-size:clamp(64px,14vw,145px);letter-spacing:-.085em;line-height:.75;margin:0;text-transform:uppercase}
-    .hero-grid{display:grid;grid-template-columns:1.02fr 1fr;gap:38px;align-items:stretch;margin-top:10px;min-height:480px}
-    .hero-photo{height:100%;min-height:450px;overflow:hidden;border:1px solid var(--line);background:#ddd}
-    .hero-photo img{height:100%;width:100%;object-fit:cover;filter:saturate(.82) contrast(1.05)}
-    .intro{display:flex;flex-direction:column;justify-content:space-between;padding:24px 0 8px}
-    .nav{display:flex;gap:38px;font-size:9px;letter-spacing:.08em;text-transform:uppercase;border-top:1px solid var(--line);padding-top:8px}
-    .intro h2{font-family:var(--serif);font-weight:600;font-size:clamp(32px,4.6vw,56px);line-height:.95;letter-spacing:-.055em;margin:80px 0 32px;max-width:520px}
-    .intro p{max-width:450px;color:#2d2b27;font-size:16px;line-height:1.45;margin:0 0 26px}
-    .pill{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:var(--lav);padding:12px 28px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
-    .pill:hover{background:var(--violet);color:#fff}
-    .black{background:#111;color:#fff;padding:0 24px 26px;overflow:hidden}
-    .section-title{font-family:var(--display);font-size:clamp(66px,15vw,150px);letter-spacing:-.085em;line-height:.72;text-transform:uppercase;margin:0;padding-top:22px;white-space:nowrap}
-    .testimonial-grid{display:grid;grid-template-columns:.95fr 1.1fr .55fr;gap:34px;margin-top:18px;align-items:start}
-    .quote{font-family:var(--serif);font-size:clamp(28px,4vw,45px);line-height:.88;letter-spacing:-.05em;margin:0}
-    .proof{font-size:15px;line-height:1.4;color:#f4f2ea;margin:6px 0 0;max-width:440px}.proof strong{color:var(--lav)}
-    .mini-card{border:1px solid rgba(255,255,255,.22);padding:12px;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:#e9e5d8}.mini-card img{margin-top:12px;aspect-ratio:1/1;object-fit:cover;filter:grayscale(.25)}
-    .steps{padding:0 24px 0;background:var(--paper)}
-    .step-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
-    .step{padding:0 0 14px;border-right:1px solid var(--ink)}.step:last-child{border-right:0}
-    .step-head{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--ink);padding:8px 8px 8px 0}.num{border-radius:999px;background:#fff;padding:7px 18px;font-size:10px;text-transform:uppercase}.step h3{font-size:13px;margin:0;text-transform:uppercase}.step p{font-size:13px;line-height:1.32;margin:12px 16px 0 0;color:#1d1b18}
-    .image-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border-bottom:1px solid var(--line)}.image-grid img{height:230px;width:100%;object-fit:cover;border-right:1px solid var(--paper);filter:saturate(.74) contrast(1.03)}.image-grid img:last-child{border-right:0}
-    .budget{background:var(--lav);padding:30px 24px 18px}.budget-grid{display:grid;grid-template-columns:1fr 1.65fr;gap:28px;align-items:end}.budget h2{padding-top:0}.budget-copy{font-family:var(--serif);font-size:clamp(28px,4vw,48px);line-height:.92;letter-spacing:-.05em;margin:0 0 20px}.metrics{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(0,0,0,.32);border-bottom:1px solid rgba(0,0,0,.32)}.metric{padding:14px 8px;border-right:1px solid rgba(0,0,0,.22)}.metric:last-child{border-right:0}.metric b{display:block;font-family:var(--serif);font-size:34px;font-weight:400;line-height:1}.metric span{font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:#2f2b2b}
-    .aims{background:var(--paper);padding:0 24px 20px}.aims-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:44px;align-items:start}.case-card{position:relative;border:1px solid var(--line);padding:12px;background:#f8f6ee}.case-card img{aspect-ratio:4/5;object-fit:cover;filter:saturate(.75)}.case-caption{position:absolute;left:24px;bottom:24px;width:58%;background:var(--white);padding:12px;font-size:12px;line-height:1.25}.case-caption b{display:block;text-transform:uppercase;margin-bottom:7px}.bubble-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.bubble{aspect-ratio:1/1;border-radius:50%;background:var(--lav);display:flex;align-items:center;justify-content:center;text-align:center;padding:28px;font-family:var(--serif);font-size:16px;line-height:1.05;text-transform:uppercase;box-shadow:inset 0 0 0 1px rgba(0,0,0,.05)}
-    .team{padding:0 24px 34px;background:var(--paper-2)}.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px}.bio h3{font-size:12px;text-transform:uppercase;margin:0 0 8px}.bio p{font-size:15px;line-height:1.35;margin:0 0 18px}.bio-img{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;align-items:end}.bio-img img{aspect-ratio:4/3;object-fit:cover;border:1px solid var(--line)}.skill-list{font-size:11px;line-height:1.55;text-transform:uppercase;letter-spacing:.04em;border-top:1px solid var(--line);padding-top:10px;color:#333}.bio .pill{padding:10px 22px;background:var(--lav-2)}
-    .output{background:var(--paper);padding:0 24px 28px}.output-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:stretch}.showcase-big{border:1px solid var(--line);background:#fff;padding:12px}.showcase-big img{width:100%;height:650px;object-fit:cover;object-position:center top}.showcase-copy{background:#111;color:#fff;padding:22px;display:flex;flex-direction:column;justify-content:space-between}.showcase-copy h3{font-family:var(--serif);font-size:42px;line-height:.92;letter-spacing:-.05em;margin:0}.showcase-copy p{font-size:15px;line-height:1.45;color:#eee;margin:18px 0}.asset-wall{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:16px}.asset-wall img{height:190px;width:100%;object-fit:cover;border:1px solid var(--line);filter:saturate(.9) contrast(1.03)}
-    .study{background:var(--paper-2);padding:0 24px 30px}.study-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:stretch}.study-lead{background:#111;color:#fff;padding:20px;display:flex;flex-direction:column;justify-content:space-between}.study-lead img{width:100%;aspect-ratio:16/9;object-fit:cover;border:1px solid rgba(255,255,255,.2);margin-bottom:18px}.study-lead h3{font-family:var(--serif);font-size:40px;line-height:.9;letter-spacing:-.05em;margin:0}.study-lead p{font-size:15px;line-height:1.42;color:#eee;margin:16px 0 0}.study-stack{display:grid;grid-template-columns:1fr 1fr;gap:12px}.study-card{border:1px solid var(--line);background:#f8f6ee;padding:12px;display:flex;flex-direction:column;gap:12px}.study-card img{height:250px;width:100%;object-fit:cover;object-position:center top;filter:saturate(.8) contrast(1.03)}.study-card small{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#5d5b54}.study-card h3{font-family:var(--serif);font-size:26px;line-height:.92;letter-spacing:-.045em;margin:0}.study-card p{font-size:13px;line-height:1.36;margin:0;color:#222}
-    .work{background:#111;color:#fff;padding:0 24px 28px}.work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:#383838;border:1px solid #383838}.work-card{background:#111;padding:18px;min-height:260px;display:flex;flex-direction:column;justify-content:space-between}.work-logo{width:100%;height:52px;object-fit:contain;object-position:left center;margin-bottom:14px;opacity:.94}.work-card small{color:var(--lav);text-transform:uppercase;letter-spacing:.08em}.work-card h3{font-family:var(--serif);font-size:28px;line-height:.92;margin:12px 0 14px;letter-spacing:-.045em}.work-card p{font-size:13px;line-height:1.35;color:#e7e3db;margin:0}.study-card.video-card{grid-column:1/-1}.study-card video{width:100%;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--line);background:#000}
-    .university{background:var(--paper-2);padding:0 24px 32px}.uni-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}.uni-board{border:1px solid var(--line);background:#fff;padding:12px}.uni-board img{width:100%;height:100%;min-height:430px;object-fit:cover}.uni-copy{background:var(--lav);padding:22px;display:flex;flex-direction:column;justify-content:space-between}.uni-copy h3{font-family:var(--serif);font-size:42px;line-height:.92;letter-spacing:-.05em;margin:0}.uni-copy p{font-size:15px;line-height:1.42;margin:18px 0 0}.uni-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.uni-tags span{border:1px solid rgba(0,0,0,.25);border-radius:999px;padding:8px 12px;font-size:10px;text-transform:uppercase;font-weight:800;letter-spacing:.04em;background:rgba(255,255,255,.26)}
-    footer{background:var(--lav);padding:26px 24px 34px}.footer-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:end}footer h2{font-family:var(--display);font-size:clamp(56px,11vw,116px);letter-spacing:-.085em;line-height:.75;margin:0;text-transform:uppercase}footer p{font-family:var(--serif);font-size:28px;line-height:.95;letter-spacing:-.04em;margin:0 0 20px}.links{display:flex;flex-wrap:wrap;gap:10px}.links a{border:1px solid rgba(0,0,0,.28);border-radius:999px;padding:10px 16px;background:rgba(255,255,255,.28);font-size:12px;font-weight:800;text-transform:uppercase}.micro{display:flex;justify-content:space-between;font-size:9px;text-transform:uppercase;letter-spacing:.08em;margin-top:34px;color:#322d45}
-    @media(min-width:761px){
-      body{background:radial-gradient(circle at 50% 0,rgba(255,255,255,.28),transparent 34%),linear-gradient(90deg,#d9d0ff 0,#cfc3ff 100%)}
-      .page{max-width:1160px;margin:0 auto 68px;border-left:1px solid rgba(0,0,0,.08);border-right:1px solid rgba(0,0,0,.08)}
-      .strip{padding:18px 30px 10px;font-size:9.5px;letter-spacing:.12em}.hero{padding:16px 30px 0}.hero-title{font-size:clamp(126px,10.4vw,174px);line-height:.67;letter-spacing:-.078em;margin-left:-4px;text-wrap:balance}.hero-grid{grid-template-columns:.95fr 1.05fr;gap:68px;min-height:548px;margin-top:12px}.hero-photo{min-height:548px;height:548px}.hero-photo img{object-position:center 42%}.intro{padding:22px 0 28px}.nav{gap:54px;padding-top:10px}.intro h2{font-size:clamp(50px,4.55vw,67px);line-height:.86;margin:82px 0 28px;max-width:570px}.intro p{max-width:500px;font-size:17px;line-height:1.52}.pill{padding:13px 30px}
-      .black,.steps,.budget,.aims,.team,.output,.study,.work,footer{padding-left:30px;padding-right:30px}.section-title{font-size:clamp(116px,12.6vw,184px);line-height:.68;letter-spacing:-.084em}.black{padding-bottom:42px}.testimonial-grid{grid-template-columns:1.08fr 1.05fr .52fr;gap:50px;margin-top:4px}.quote{font-size:clamp(42px,4.35vw,60px);line-height:.82}.proof{font-size:16px;line-height:1.48}.mini-card{padding:14px}.mini-card img{height:145px;width:100%;object-fit:cover}
-      .steps .section-title{padding-top:12px}.step-row{border-width:1.5px}.step-head{padding:9px 10px 9px 0}.step h3{letter-spacing:.05em}.step p{font-size:14px;line-height:1.38;margin:14px 18px 2px 0}.image-grid img{height:285px;filter:saturate(.7) contrast(1.04)}
-      .budget{padding-top:42px;padding-bottom:28px}.budget-grid{grid-template-columns:.88fr 1.12fr;gap:54px;align-items:end}.budget .section-title{font-size:clamp(112px,11vw,164px);padding-top:0}.budget-copy{font-size:clamp(42px,4.2vw,58px);line-height:.9}.metrics{background:rgba(255,255,255,.13)}.metric{padding:18px 14px}.metric b{font-size:42px}
-      .aims{padding-bottom:42px}.aims-grid{grid-template-columns:.9fr 1.1fr;gap:64px}.case-card{padding:14px}.case-card img{aspect-ratio:4/4.85;object-position:center 37%}.case-caption{width:62%;left:28px;bottom:28px}.bubble-grid{gap:28px}.bubble{font-size:18px;padding:34px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.07),0 14px 42px rgba(90,60,160,.08)}
-      .team{padding-bottom:44px}.team .section-title{font-size:clamp(104px,10.4vw,154px);margin-bottom:18px}.team-grid{grid-template-columns:1fr 1fr;gap:58px}.bio p{font-size:16px;line-height:1.43}.bio-img{gap:18px}.bio-img img{height:225px;width:100%;object-fit:cover}.skill-list{font-size:11.5px}
-      .output{padding-bottom:40px}.output-grid{grid-template-columns:.95fr 1.05fr;gap:32px}.showcase-big{padding:14px}.showcase-big img{height:560px}.showcase-copy{padding:34px}.showcase-copy h3{font-size:clamp(46px,4.7vw,64px);line-height:.86}.showcase-copy p{font-size:16px;line-height:1.5}.asset-wall{gap:10px}.asset-wall img{height:176px}
-      .study{padding-bottom:42px}.study-grid{grid-template-columns:1fr 1fr;gap:30px;align-items:start}.study-lead{align-self:start;min-height:0;padding:24px}.study-lead img{aspect-ratio:16/10;height:auto;margin-bottom:24px}.study-lead h3{font-size:clamp(42px,4.2vw,58px);line-height:.86}.study-lead p{font-size:16px;line-height:1.48}.study-stack{gap:14px}.study-card{padding:14px}.study-card img{height:214px}.study-card h3{font-size:30px}.study-card p{font-size:13.5px;line-height:1.42}
-      .work{padding-bottom:36px}.work-grid{grid-template-columns:repeat(5,1fr)}.work-card{min-height:258px;padding:20px}.work-card h3{font-size:31px}.work-card p{font-size:13.5px;line-height:1.42}footer{padding-top:32px}.footer-grid{grid-template-columns:1fr 1.15fr;gap:64px}footer h2{font-size:clamp(92px,10vw,146px)}footer p{font-size:35px;line-height:.92}.links a{padding:11px 18px}
-    }
-    @media(min-width:1320px){.page{max-width:1200px}.hero-title{font-size:180px}.section-title{font-size:190px}.hero-grid{gap:76px}}
-    @media(min-width:761px) and (max-width:1050px){.page{max-width:100%;margin-bottom:44px}.hero-title{font-size:clamp(104px,13.8vw,124px)}.hero-grid{gap:38px;min-height:470px}.hero-photo{height:470px;min-height:470px}.intro h2{font-size:46px}.nav{gap:30px}.section-title{font-size:clamp(92px,12vw,118px)}.testimonial-grid{gap:28px}.quote{font-size:40px}.budget-grid{grid-template-columns:1fr;gap:18px}.aims-grid{gap:34px}.bubble{font-size:15px;padding:24px}.showcase-copy h3{font-size:44px}.study-lead h3{font-size:40px}.study-stack{grid-template-columns:1fr 1fr}.work-grid{grid-template-columns:repeat(3,1fr)}.work-card{min-height:220px}}
-    @media(max-width:760px){.page{max-width:none}.strip{grid-template-columns:1fr 1fr;font-size:8px}.strip .center{display:none}.hero{padding:12px 14px 0}.hero-grid,.testimonial-grid,.budget-grid,.aims-grid,.team-grid,.footer-grid,.output-grid,.study-grid{grid-template-columns:1fr;gap:20px}.hero-photo{min-height:380px}.intro h2{margin:28px 0 20px}.nav{gap:16px;flex-wrap:wrap}.section-title{font-size:68px;white-space:normal}.team .section-title,.work .section-title,.output .section-title,.study .section-title{margin-bottom:14px}.black,.steps,.budget,.aims,.team,.work,.output,.study,footer{padding-left:14px;padding-right:14px}.testimonial-grid{margin-top:12px}.step-row,.image-grid,.work-grid,.study-stack{grid-template-columns:1fr}.step{border-right:0;border-bottom:1px solid var(--ink)}.step:last-child{border-bottom:0}.image-grid img{border-right:0;border-bottom:1px solid var(--paper);height:260px}.image-grid img:nth-child(3){object-position:center top}.bubble-grid{gap:12px}.bubble{font-size:12px;padding:18px}.bio-img{grid-template-columns:1fr}.showcase-big img{height:auto}.asset-wall{grid-template-columns:1fr 1fr}.asset-wall img{height:210px}.study-card img{height:220px}.work-card{min-height:180px}.micro{display:block}.micro span{display:block;margin-top:8px}}
+    img,video{max-width:100%;display:block}
+    .page{width:100%;margin:0;background:var(--paper);overflow:hidden}
+    .shell{padding-left:clamp(14px,4vw,72px);padding-right:clamp(14px,4vw,72px)}
+    .top-strip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;align-items:start;padding:18px clamp(14px,4vw,72px) 11px;border-bottom:1px solid var(--line);font-size:9px;letter-spacing:.12em;text-transform:uppercase}.top-strip .center{text-align:center}.top-strip .right{text-align:right}
+    .hero{padding-top:18px}.hero-title{font-family:var(--display);font-size:clamp(74px,13vw,180px);letter-spacing:-.08em;line-height:.68;margin:0 0 18px;text-transform:uppercase}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,76px);align-items:start}.hero-photo{border:1px solid var(--line);background:var(--paper-3);padding:10px}.hero-photo img{width:100%;height:auto;filter:saturate(.86) contrast(1.03)}
+    .intro{display:flex;flex-direction:column;gap:36px;min-height:100%}.menu{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:8px 0;display:flex;align-items:center;gap:18px;flex-wrap:wrap}.menu-label{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding-right:14px;border-right:1px solid var(--line)}.menu a{font-size:10px;letter-spacing:.09em;text-transform:uppercase;padding:8px 12px;border:1px solid transparent;border-radius:999px}.menu a:hover,.menu a:focus-visible{border-color:var(--ink);background:var(--lav);outline:none}.intro h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,4.6vw,62px);line-height:.95;letter-spacing:-.055em;margin:18px 0 22px;max-width:680px}.intro p{max-width:590px;color:#2d2b27;font-size:16px;line-height:1.5;margin:0 0 24px}.pill{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:var(--lav);padding:12px 26px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}.pill:hover,.pill:focus-visible{background:#111;color:#fff;outline:none}
+    section{padding-top:clamp(34px,4vw,62px);padding-bottom:clamp(30px,4vw,58px)}.section-title{font-family:var(--display);font-size:clamp(68px,12vw,178px);letter-spacing:-.084em;line-height:.84;text-transform:uppercase;margin:0 0 clamp(18px,2.4vw,42px)}.section-kicker{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}.black{background:#111;color:#fff}.black .section-kicker{color:#d8cbff}.black .muted{color:#eee}.overview-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(24px,5vw,72px);align-items:start}.statement{font-family:var(--serif);font-size:clamp(30px,4vw,58px);line-height:.95;letter-spacing:-.05em;margin:0}.overview-copy{font-size:16px;line-height:1.52;max-width:650px;margin:4px 0 0;color:#f3f0e8}.result-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.28);border-bottom:1px solid rgba(255,255,255,.28);margin-top:30px}.result{padding:18px 16px;border-right:1px solid rgba(255,255,255,.18)}.result:last-child{border-right:0}.result b{display:block;font-family:var(--serif);font-size:38px;font-weight:400;line-height:1}.result span{display:block;margin-top:8px;font-size:10px;line-height:1.35;text-transform:uppercase;letter-spacing:.07em;color:#e8e3d6}
+    .experience{background:var(--paper-2)}.role-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.role-card{background:var(--paper-2);padding:22px;min-height:0;display:grid;grid-template-rows:auto auto 1fr auto;align-content:start;gap:10px}.role-card small{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#5b574f}.role-card h3{font-family:var(--serif);font-size:clamp(30px,2.8vw,42px);line-height:1;letter-spacing:-.045em;margin:0}.role-card p{font-size:14px;line-height:1.45;margin:0;color:#24221e}.role-card ul{padding:0;margin:8px 0 0;list-style:none;font-size:11px;line-height:1.6;text-transform:uppercase;letter-spacing:.04em;color:#38342e;align-self:end}.role-card li+li{border-top:1px solid rgba(0,0,0,.12);padding-top:5px;margin-top:5px}
+    .output{background:var(--paper)}.output-head{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(24px,5vw,64px);align-items:end}.output-copy{font-size:16px;line-height:1.52;color:#27241f;max-width:650px}.feature-work{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;margin-top:10px;align-items:stretch}.feature-frame,.study-card{border:1px solid var(--line);background:var(--paper-3)}.feature-frame{padding:0;display:flex;align-items:stretch;justify-content:center;border:0;background:transparent}.feature-frame img{width:100%;height:min(74vh,720px);object-fit:cover;background:transparent}.feature-copy{background:#111;color:#fff;padding:26px;display:flex;flex-direction:column;justify-content:space-between}.feature-copy h3{font-family:var(--serif);font-size:clamp(38px,4vw,58px);line-height:.95;letter-spacing:-.05em;margin:0}.feature-copy p{font-size:15px;line-height:1.5;color:#eee;margin:20px 0 0}.gallery-grid{columns:4 220px;column-gap:14px;margin-top:18px}.gallery-card{display:block;width:100%;break-inside:avoid;margin:0 0 14px;padding:0;text-align:left;cursor:pointer;color:inherit;font:inherit;border:0;background:transparent;position:relative;overflow:hidden}.gallery-card img{width:100%;height:auto;object-fit:cover;background:transparent;transition:transform .2s ease;filter:saturate(.98) contrast(1.02)}.gallery-card:hover img,.gallery-card:focus-visible img{transform:scale(1.025)}.gallery-card span{display:block;margin:7px 0 0;font-size:10px;line-height:1.35;text-transform:uppercase;letter-spacing:.07em;color:#4a4640}.gallery-note{font-size:12px;color:#5d5b54;margin:12px 0 0}
+    .study{background:var(--paper-2)}.study-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}.study-lead{background:#111;color:#fff;padding:0;display:grid;grid-template-columns:1.05fr .95fr;gap:0;align-items:stretch}.study-lead img,.study-lead video{width:100%;height:100%;min-height:460px;object-fit:cover;background:#111}.study-lead .festival-visual{object-position:62% center}.study-lead div{padding:26px}.study-lead h3,.study-card h3{font-family:var(--serif);letter-spacing:-.045em;margin:0}.study-lead h3{font-size:clamp(34px,4vw,56px);line-height:.95}.study-lead p{font-size:15px;line-height:1.5;color:#eee;margin:18px 0}.actions{display:flex;gap:10px;flex-wrap:wrap}.link-pill{display:inline-flex;border:1px solid currentColor;border-radius:999px;padding:10px 14px;font-size:10px;text-transform:uppercase;letter-spacing:.07em;font-weight:800;background:transparent;color:inherit;cursor:pointer}.study-stack{display:grid;grid-template-columns:1fr;gap:14px}.study-card{padding:0;overflow:hidden}.study-card img{height:260px;width:100%;object-fit:cover;background:#111}.study-card video{height:260px;width:100%;object-fit:cover;background:#111}.study-card .card-copy{padding:14px}.study-card small{display:block;margin:0 0 8px;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#5d5b54}.study-card h3{font-size:30px;line-height:1}.study-card p{font-size:13px;line-height:1.42;color:#24221e;margin:12px 0 14px}
+    .background{background:#111;color:#fff}.project-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#3a3a3a;border:1px solid #3a3a3a}.project-card{background:#111;padding:20px;min-height:260px;display:flex;flex-direction:column;align-items:flex-start}.work-logo{width:150px;height:64px;object-fit:contain;object-position:left center;margin-bottom:18px}.project-card small{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--lav)}.project-card h3{font-family:var(--serif);font-size:30px;line-height:1;letter-spacing:-.045em;margin:14px 0 14px}.project-card p{font-size:13px;line-height:1.42;color:#e7e3db;margin:0 0 14px}.project-link{margin-top:auto;border-bottom:1px solid rgba(255,255,255,.45);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#fff}
+    footer{background:var(--lav);padding:clamp(34px,5vw,72px) clamp(14px,4vw,72px) 34px}.footer-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(24px,5vw,72px);align-items:end}footer h2{font-family:var(--display);font-size:clamp(64px,10vw,146px);letter-spacing:-.085em;line-height:.88;margin:0;text-transform:uppercase}footer p{font-family:var(--serif);font-size:clamp(26px,3vw,40px);line-height:1;letter-spacing:-.04em;margin:0 0 20px}.links{display:flex;flex-wrap:wrap;gap:10px}.links a{border:1px solid rgba(0,0,0,.28);border-radius:999px;padding:10px 16px;background:rgba(255,255,255,.28);font-size:12px;font-weight:800;text-transform:uppercase}.micro{display:flex;justify-content:space-between;font-size:9px;text-transform:uppercase;letter-spacing:.08em;margin-top:34px;color:#322d45}
+    dialog.lightbox{width:min(1100px,94vw);border:0;padding:0;background:#111;color:#fff;box-shadow:0 30px 120px rgba(0,0,0,.45)}dialog::backdrop{background:rgba(0,0,0,.72)}.lightbox-inner{padding:16px}.lightbox-bar{display:flex;justify-content:space-between;gap:18px;align-items:center;margin-bottom:12px}.lightbox-title{font-size:11px;text-transform:uppercase;letter-spacing:.1em}.lightbox-close{border:1px solid rgba(255,255,255,.4);background:transparent;color:#fff;border-radius:999px;padding:8px 12px;cursor:pointer}.lightbox-media img,.lightbox-media video{max-height:78vh;width:100%;object-fit:contain;background:#000}.lightbox-caption{font-size:13px;line-height:1.45;color:#ddd;margin:12px 0 0}
+    @media(max-width:1050px){.hero-grid,.overview-grid,.output-head,.feature-work,.study-grid,.study-lead,.footer-grid{grid-template-columns:1fr}.role-grid{grid-template-columns:1fr 1fr}.project-grid{grid-template-columns:1fr 1fr}.result-grid{grid-template-columns:1fr 1fr}.gallery-grid{grid-template-columns:1fr 1fr}.feature-frame img{height:auto}.top-strip{grid-template-columns:1fr 1fr}.top-strip .center{display:none}}
+    @media(max-width:640px){.hero-title{font-size:clamp(68px,20vw,94px);line-height:.82;letter-spacing:-.075em}.intro h2{font-size:34px;line-height:1}.section-title{font-size:64px;line-height:.94;white-space:normal}.menu{gap:8px}.menu-label{width:100%;border-right:0;border-bottom:1px solid var(--line);padding:0 0 8px}.menu a{padding:7px 10px}.role-grid,.project-grid,.result-grid,.gallery-grid{grid-template-columns:1fr}.result{border-right:0;border-bottom:1px solid rgba(255,255,255,.18)}.result:last-child{border-bottom:0}.gallery-card img,.study-card img,.study-card video{height:auto;max-height:none}.study-lead{grid-template-columns:1fr}.study-lead img,.study-lead video{min-height:0}.micro{display:block}.micro span{display:block;margin-top:8px}}
   </style>
 </head>
 <body>
   <main class="page">
-    <div class="strip"><span>Portfolio / 2026</span><span class="center">Creative business × product ops × growth</span><span class="right">London, UK</span></div>
+    <div class="top-strip"><span>Portfolio / CV</span><span class="center">Product · marketing · events</span><span class="right">London, UK</span></div>
 
-    <section class="hero" id="top">
+    <section class="hero shell" id="top">
       <h1 class="hero-title">STAVROS</h1>
       <div class="hero-grid">
-        <figure class="hero-photo"><img src="assets/hero.jpg" alt="Stavros Mavrommatis presenting in a lecture room"></figure>
+        <figure class="hero-photo"><img src="assets/speaking-wide.jpg" alt="Stavros Mavrommatis speaking at the University of York"></figure>
         <div class="intro">
-          <nav class="nav"><a href="#proof">Proof</a><a href="#work">Work</a><a href="#process">Process</a><a href="#contact">Contact</a></nav>
+          <nav class="menu" aria-label="Portfolio menu"><span class="menu-label">Menu</span><a href="#overview">Overview</a><a href="#experience">Roles</a><a href="#output">Creative</a><a href="#study">Study</a><a href="#work">Work</a><a href="#contact">Contact</a></nav>
           <div>
-            <h2>Stavros is building useful digital experiences at the edge of media, growth and operations.</h2>
-            <p>Business of the Creative Industries graduate from the University of York. Product operator at Pyxi. Comfortable turning messy ideas into events, campaigns, reports, workflows and content people can actually use.</p>
-            <a class="pill" href="assets/stavros-mavrommatis-cv.pdf">Download CV</a>
+            <h2>I’m Stavros. I work across creative business, events and marketing.</h2>
+            <p>I’m interested in the point where taste, organisation and fast production meet. Recently that has meant building cultural event assets at Pyxi, editing screen work, using Adobe tools, and using modern generative AI to make sharper ads and visuals faster.</p>
+            <a class="pill" href="assets/stavros-mavrommatis-cv.pdf">CV</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="black" id="proof">
-      <div class="strip" style="padding-left:0;padding-right:0;border-color:rgba(255,255,255,.25)"><span>Selected proof</span><span class="center">Pyxi / York / IB / JA</span><span class="right">Employer-ready</span></div>
-      <h2 class="section-title">PROOF</h2>
-      <div class="testimonial-grid">
-        <p class="quote">Not just “creative”. Commercial, technical, organised and useful under pressure.</p>
-        <p class="proof"><strong>At Pyxi</strong>, launched Culture Edit from inception, curated 15+ events, drove 70 paid ticket purchases and generated £600+ revenue within two months while coordinating engineering, marketing and ops. Built reports around revenue, engagement, acquisition and optimisation.</p>
-        <div class="mini-card">Presentation mode<img src="assets/gesture-card.jpg" alt="Stavros presenting with hands gesturing"></div>
+    <section class="black shell" id="overview">
+      <p class="section-kicker">Overview</p>
+      <h2 class="section-title">SUMMARY</h2>
+      <div class="overview-grid">
+        <p class="statement">This is the short version. The work is below if you want to dig in.</p>
+        <p class="overview-copy">I’ve been doing a mix of product support, campaign delivery and cultural events work. At Pyxi, I helped launch and run a paid events product, from event ideas and partner material through to guest operations and performance reporting. At York, my strongest work was FilmPulse / Kaleidoscope Film Festival and my final research project on VFX, AI and labour.</p>
+      </div>
+      <div class="result-grid" aria-label="Selected results">
+        <div class="result"><b>15+</b><span>events curated for Pyxi cultural programming</span></div>
+        <div class="result"><b>70</b><span>paid tickets driven in the first two months</span></div>
+        <div class="result"><b>£600+</b><span>revenue attributed to early paid events activity</span></div>
+        <div class="result"><b>50+</b><span>attendees at the York screening and networking event</span></div>
       </div>
     </section>
 
-    <section class="steps" id="process">
-      <h2 class="section-title">STEPS</h2>
-      <div class="step-row">
-        <article class="step"><div class="step-head"><span class="num">One</span><h3>Research</h3></div><p>Find the user, market or employer need. Audit the gap. Reduce vague goals into a short list of useful moves.</p></article>
-        <article class="step"><div class="step-head"><span class="num">Two</span><h3>Build</h3></div><p>Turn the plan into campaigns, web pages, CRM flows, content calendars, event ops and simple reporting systems.</p></article>
-        <article class="step"><div class="step-head"><span class="num">Three</span><h3>Analyse</h3></div><p>Track the numbers that matter: revenue, engagement, conversion, CPA, attendance, workflow speed and drop-off points.</p></article>
-      </div>
-      <div class="image-grid"><img src="assets/speaking-wide.jpg" alt="Stavros speaking in lecture hall"><img src="assets/lecture-room.jpg" alt="Stavros at lecture room podium"><img src="assets/gesture-card.jpg" alt="Stavros presenting"></div>
-    </section>
-
-    <section class="budget">
-      <div class="budget-grid">
-        <h2 class="section-title">METRICS</h2>
-        <div>
-          <p class="budget-copy">A young operator with receipts, not just adjectives.</p>
-          <div class="metrics">
-            <div class="metric"><b>15+</b><span>Culture Edit events curated</span></div>
-            <div class="metric"><b>70</b><span>Paid tickets driven</span></div>
-            <div class="metric"><b>£600+</b><span>Revenue in two months</span></div>
-          </div>
-        </div>
+    <section class="experience shell" id="experience">
+      <p class="section-kicker">Experience</p>
+      <h2 class="section-title">ROLES</h2>
+      <div class="role-grid">
+        <article class="role-card"><small>Pyxi · product and marketing</small><div><h3>Cultural events product</h3><p>I helped launch and run a paid cultural events line: finding the right events, making campaign material, tracking performance and keeping product, marketing and operations moving together.</p></div><ul><li>Paid events</li><li>Campaign reporting</li><li>Partner assets</li></ul></article>
+        <article class="role-card"><small>Pyxi · operations internship</small><div><h3>Event and app support</h3><p>I worked on the practical pieces around live events: venue messages, guest flows, app testing, QR feedback, HubSpot email setup, Slack channels and event support.</p></div><ul><li>Guest operations</li><li>CRM / email</li><li>App testing</li></ul></article>
+        <article class="role-card"><small>University of York</small><div><h3>FilmPulse / Kaleidoscope</h3><p>I handled website and content work for a student film festival project, including the domain, site updates, digital assets and support for a 50+ attendee screening with Screen Yorkshire.</p></div><ul><li>Website content</li><li>Festival support</li><li>Screen Yorkshire</li></ul></article>
+        <article class="role-card"><small>Junior Achievement</small><div><h3>MatchPoint</h3><p>I co-developed an IB student venture for finding sports venues and teammates, taking on marketing, market research and business planning work.</p></div><ul><li>Business plan</li><li>Market research</li><li>Student venture</li></ul></article>
       </div>
     </section>
 
-    <section class="aims">
-      <div class="strip" style="padding-left:0;padding-right:0"><span>Positioning</span><span class="center">What I bring</span><span class="right">Purple edition</span></div>
-      <h2 class="section-title">AIMS</h2>
-      <div class="aims-grid">
-        <article class="case-card"><img src="assets/hero.jpg" alt="Stavros profile crop"><div class="case-caption"><b>Current lane</b> Social/content marketing, marketing ops, growth, AI/digital ops and creator/community operations.</div></article>
-        <div class="bubble-grid">
-          <div class="bubble">Grow audience and paid demand</div>
-          <div class="bubble">Make campaigns measurable</div>
-          <div class="bubble">Use AI tools without losing taste</div>
-          <div class="bubble">Turn chaos into systems</div>
-        </div>
+    <section class="output shell" id="output">
+      <p class="section-kicker">Selected creative</p>
+      <div class="output-head"><h2 class="section-title">OUTPUT</h2><p class="output-copy">I like making work that can go live: ad variants, email banners, partner cards, event visuals and quick video edits. A lot of this was made with Adobe tools, fast layout work and generative AI where it helped the idea move faster.</p></div>
+      <div class="feature-work">
+        <button class="feature-frame" data-kind="image" data-src="assets/pyxi-culture-edit-newspaper.jpg" data-title="Culture Edit campaign creative" data-caption="Newspaper-style Culture Edit creative for Pyxi cultural events."><img src="assets/pyxi-culture-edit-newspaper.jpg" alt="Culture Edit newspaper-style campaign creative"></button>
+        <article class="feature-copy"><div><h3>Ads, event graphics and fast creative production.</h3><p>This section is deliberately visual. I’m showing the finished pieces instead of over-explaining them: social ads, emails, partner listings, AI-assisted visuals and short-form videos from the Pyxi content packages.</p></div></article>
       </div>
+      <div class="gallery-grid" aria-label="Output gallery">
+        <button class="gallery-card" data-kind="image" data-src="assets/pyxi-culture-edit-ad.png" data-title="Culture Edit advert" data-caption="Vertical advert creative for Culture Edit activity."><img src="assets/pyxi-culture-edit-ad.png" alt="Culture Edit vertical advert"><span>Advert creative</span></button>
+        <button class="gallery-card" data-kind="image" data-src="assets/pyxi-culture-edit-post.png" data-title="Culture Edit newspaper post" data-caption="Social post variant for Culture Edit."><img src="assets/pyxi-culture-edit-post.png" alt="Culture Edit social post"><span>Social campaign</span></button>
+        <button class="gallery-card" data-kind="image" data-src="assets/pyxi-culture-edit-email-february.png" data-title="Culture Edit email banner" data-caption="Email banner and campaign asset for February events."><img src="assets/pyxi-culture-edit-email-february.png" alt="Culture Edit February email banner"><span>Email banner</span></button>
+        <button class="gallery-card" data-kind="image" data-src="assets/pyxi-thames-walk-email.png" data-title="Thames walk email" data-caption="Email banner for a Culture Edit event."><img src="assets/pyxi-thames-walk-email.png" alt="Thames walk email banner"><span>Email banner</span></button>
+        <button class="gallery-card" data-kind="image" data-src="assets/pyxi-partner-live-jazz.png" data-title="Live jazz partner app card" data-caption="Partner-app event card for Culture Edit."><img src="assets/pyxi-partner-live-jazz.png" alt="Live jazz partner app card"><span>Partner app</span></button>
+        <button class="gallery-card" data-kind="image" data-src="assets/pyxi-partner-v-and-a.png" data-title="V&A partner app card" data-caption="Partner-app event card for Culture Edit."><img src="assets/pyxi-partner-v-and-a.png" alt="V&A partner app card"><span>Partner app</span></button>
+        <button class="gallery-card" data-kind="image" data-src="assets/pyxi-ai-dinner-creative.png" data-title="Generative AI dinner creative" data-caption="AI-assisted visual creative used in the Pyxi event/content workflow."><img src="assets/pyxi-ai-dinner-creative.png" alt="AI-assisted dinner creative"><span>AI visual workflow</span></button>
+        <button class="gallery-card" data-kind="image" data-src="assets/pyxi-culture-edit-march-email.jpg" data-title="Culture Edit March marketing email" data-caption="Marketing email creative from the zip: March 2026 Culture Edit newsletter/event lineup."><img src="assets/pyxi-culture-edit-march-email.jpg" alt="Culture Edit March marketing email creative"><span>Marketing email</span></button>
+        <button class="gallery-card" data-kind="video" data-src="assets/pyxi-british-museum-ad.mp4" data-title="British Museum video ad" data-caption="Short-form event ad from the Pyxi content packages folder."><img src="assets/pyxi-british-museum-ad-poster.jpg" alt="British Museum video ad poster"><span>Video ad</span></button>
+        <button class="gallery-card" data-kind="video" data-src="assets/pyxi-sky-garden-creative.mp4" data-title="Sky Garden video creative" data-caption="Short-form event creative from the Pyxi content packages folder."><img src="assets/pyxi-sky-garden-creative-poster.jpg" alt="Sky Garden video creative poster"><span>Video creative</span></button>
+        <button class="gallery-card" data-kind="video" data-src="assets/pyxi-legoland-creative.mp4" data-title="Legoland video creative" data-caption="Short-form event creative from the Pyxi content packages folder."><img src="assets/pyxi-legoland-creative-poster.jpg" alt="Legoland video creative poster"><span>Video creative</span></button>
+        <button class="gallery-card" data-kind="video" data-src="assets/pyxi-movie-night-creative.mp4" data-title="Movie night video creative" data-caption="Short-form event creative from the Pyxi content packages folder."><img src="assets/pyxi-movie-night-creative-poster.jpg" alt="Movie night video creative poster"><span>Video creative</span></button>
+      </div>
+      <p class="gallery-note">Click any image or video to inspect it.</p>
     </section>
 
-    <section class="team">
-      <h2 class="section-title">PROFILE</h2>
-      <div class="team-grid">
-        <article class="bio">
-          <h3>[Pyxi] Product Line Owner, Culture Edit</h3>
-          <p>Owned a new cultural events product line from launch: event curation, roadmap thinking, acquisition campaigns, KPI reporting and cross-team delivery.</p>
-          <div class="bio-img"><img src="assets/speaking-wide.jpg" alt="Stavros presenting"><div class="skill-list">Roadmaps<br>Event ops<br>CRM/email<br>KPI reports<br>Stakeholder comms<br>Campaign delivery</div></div>
-        </article>
-        <article class="bio">
-          <h3>[York] Website & Content Manager, FilmPulse</h3>
-          <p>Managed the website and content for a university-led film festival project, coordinated a 50+ attendee screening/networking event with Screen Yorkshire, and organised 3+ hours of documentary material.</p>
-          <div class="bio-img"><img src="assets/lecture-room.jpg" alt="Stavros speaking"><div class="skill-list">Website CMS<br>Film/media<br>Event logistics<br>Documentation<br>Adobe/CapCut<br>Content ops</div></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="output">
-      <div class="strip" style="padding-left:0;padding-right:0"><span>Creative output</span><span class="center">Campaigns / Email / Partner app</span><span class="right">Selected Pyxi assets</span></div>
-      <h2 class="section-title">OUTPUT</h2>
-      <div class="output-grid">
-        <figure class="showcase-big"><img src="assets/pyxi-culture-edit-generic.jpg" alt="Culture Edit campaign creative"></figure>
-        <article class="showcase-copy">
-          <div>
-            <h3>Culture Edit became a real product lane, not a loose set of one-off ideas.</h3>
-            <p>Source files show ownership planning, event research, partner-app covers, email banners, Instagram stories, UGC/video work, placecards, feedback QR processes and operating fixes. The strongest employer signal: Stavros can make the thing, market the thing, run the thing, and report on the thing.</p>
-          </div>
-          <a class="pill" href="assets/stavros-mavrommatis-cv.pdf">See CV</a>
-        </article>
-      </div>
-      <div class="asset-wall" aria-label="Selected Pyxi portfolio assets">
-        <img src="assets/pyxi-culture-edit-feb.jpg" alt="Culture Edit February campaign">
-        <img src="assets/pyxi-ad-screenshot.png" alt="Culture Edit Instagram advert screenshot">
-        <img src="assets/pyxi-culture-email.png" alt="Culture Edit email design">
-        <img src="assets/pyxi-thames-email.png" alt="Thames walk email banner">
-        <img src="assets/pyxi-valentines.png" alt="Valentines jazz night partner app card">
-        <img src="assets/pyxi-national-gallery.png" alt="National Gallery partner app card">
-        <img src="assets/pyxi-housewarming.png" alt="Housewarming party story creative">
-        <img src="assets/pyxi-culture-edit-generic.jpg" alt="Culture Edit general creative">
-      </div>
-    </section>
-
-    <section class="study" id="study">
-      <div class="strip" style="padding-left:0;padding-right:0"><span>York archive</span><span class="center">BCI / FilmPulse / VFX</span><span class="right">Curated proof</span></div>
+    <section class="study shell" id="study">
+      <p class="section-kicker">University work</p>
       <h2 class="section-title">STUDY</h2>
       <div class="study-grid">
         <article class="study-lead">
-          <img src="assets/boci-filmpulse-title.jpg" alt="FilmPulse short film marketing presentation title slide">
-          <div>
-            <h3>FilmPulse turned a university brief into a working marketing service and film-festival platform.</h3>
-            <p>Archive evidence shows Stavros on marketing and content creation: setting up the domain, drafting and maintaining the website, producing digital assets, supporting festival logistics and grounding the final presentation in segmentation, targeting, positioning and marketing-mix theory.</p>
-          </div>
+          <img class="festival-visual" src="assets/kaleidoscope-bame-festival.png" alt="Kaleidoscope Film Festival promotional visual">
+          <div><h3>FilmPulse and Kaleidoscope Film Festival.</h3><p>I worked on the website and content side of a student film festival project at York. I kept this section focused on the festival visual material and the work itself.</p></div>
         </article>
         <div class="study-stack">
-          <article class="study-card"><img src="assets/boci-vfx-dissertation.jpg" alt="VFX dissertation cover page"><small>Research / 2025</small><h3>VFX, AI and labour</h3><p>9,113-word University of York dissertation on studio power, unionisation, public perception and emerging AI threats in visual-effects work.</p></article>
-          <article class="study-card"><img src="assets/boci-youthflick-plan.jpg" alt="YouthFlick Project business plan page"><small>Business planning</small><h3>YouthFlick Project</h3><p>Creative film-incubator business plan with mission, model, activity milestones, budget planning and launch sequencing.</p></article>
-          <article class="study-card"><img src="assets/boci-filmpulse-brand.jpg" alt="FilmPulse branding guideline page"><small>Brand and comms</small><h3>FilmPulse system</h3><p>Branding and communications plan for independent-filmmaker stakeholders, festival promotion, FAQs, press, social and local outreach.</p></article>
-          <article class="study-card video-card"><video controls preload="metadata" poster="assets/off-the-record-poster.jpg"><source src="assets/off-the-record-full.mp4" type="video/mp4"></video><small>Short film / Full-length source</small><h3>Off The Record</h3><p>Full-length University of York short-film evidence from the original source video, included as a clean portfolio sample rather than a trimmed edit.</p></article>
+          <article class="study-card"><img src="assets/vfx-ai-dissertation-cover.jpg" alt="VFX and AI dissertation PDF cover"><div class="card-copy"><small>Research project</small><h3>VFX, AI and labour</h3><p>My final research project looked at visual effects labour, studio power, unionisation and how AI pressure changes the way VFX artists are seen and treated.</p><a class="link-pill" href="assets/vfx-ai-dissertation.pdf">Open PDF</a></div></article>
+          <article class="study-card"><video src="assets/off-the-record-full.mp4" poster="assets/off-the-record-poster.jpg" playsinline controls></video><div class="card-copy"><small>Screen production / full source</small><h3>Off The Record</h3><p>The full-length year-one live broadcast project from the original source video, kept intact rather than using the shorter edit.</p><button class="link-pill" data-kind="video" data-src="assets/off-the-record-full.mp4" data-title="Off The Record full source video" data-caption="Full-length source video from the year-one screen production project.">View full video</button></div></article>
         </div>
       </div>
     </section>
 
-    <section class="work" id="work">
+    <section class="background shell" id="work">
+      <p class="section-kicker">Work map</p>
       <h2 class="section-title">WORK</h2>
-      <div class="work-grid">
-        <article class="work-card"><div><img class="work-logo" src="assets/work-logo-pyxi.png" alt="Pyxi logo"><small>01 / Pyxi</small></div><div><h3>Culture Edit</h3><p>Launched and operated a paid cultural events line: curation, acquisition, reporting and cross-team coordination.</p></div></article>
-        <article class="work-card"><div><img class="work-logo" src="assets/work-logo-pyxi.png" alt="Pyxi logo"><small>02 / Pyxi Ops</small></div><div><h3>Community</h3><p>Venue comms, guest flows, app testing, QR feedback processes, Slack channels, HubSpot email setup and event support.</p></div></article>
-        <article class="work-card"><div><img class="work-logo" src="assets/work-logo-filmpulse.png" alt="FilmPulse logo"><small>03 / University of York</small></div><div><h3>FilmPulse</h3><p>Set up domain/site, shaped marketing content and supported the Kaleidoscope Film Festival as part of a student/indie filmmaker marketing service.</p></div></article>
-        <article class="work-card"><div><img class="work-logo" src="assets/work-logo-matchpoint.png" alt="MatchPoint logo"><small>04 / Junior Achievement</small></div><div><h3>MatchPoint</h3><p>IB-era student venture: sports venue and teammate marketplace, business plan, marketing ownership and ESP pathway.</p></div></article>
-        <article class="work-card"><div><img class="work-logo" src="assets/work-logo-york.png" alt="University of York logo"><small>05 / Education</small></div><div><h3>Creative Business</h3><p>BA Business of the Creative Industries, 2:1. IB 39/45 with 7/7 in Business Management.</p></div></article>
+      <div class="project-grid">
+        <article class="project-card"><img class="work-logo" src="assets/logo-pyxi.png" alt="Pyxi logo"><small>01 / Pyxi</small><h3>Paid cultural events</h3><p>I helped build and promote a cultural events line: event ideas, campaign assets, partner material, reporting and live-event coordination.</p><a class="project-link" href="https://www.pyxi.ai/">Pyxi website</a></article>
+        <article class="project-card"><img class="work-logo" src="assets/logo-pyxi.png" alt="Pyxi logo"><small>02 / Pyxi internship</small><h3>Operations support</h3><p>Venue communication, guest flows, app testing, CRM/email setup, QR feedback and the kind of small details that make events work in real life.</p><a class="project-link" href="https://www.pyxi.ai/">Pyxi website</a></article>
+        <article class="project-card"><img class="work-logo" src="assets/logo-filmpulse.png" alt="FilmPulse logo"><small>03 / FilmPulse</small><h3>Kaleidoscope festival</h3><p>Website/content work and festival support for a York student film platform connected to a screening and networking event.</p><a class="project-link" href="https://www.york.ac.uk/arts-creative-technologies/">York school</a></article>
+        <article class="project-card"><img class="work-logo" src="assets/logo-matchpoint.png" alt="MatchPoint logo"><small>04 / Student venture</small><h3>MatchPoint</h3><p>An IB student venture for finding sports venues and teammates, with marketing, market research and business planning work.</p><a class="project-link" href="https://www.jaworldwide.org/">Junior Achievement</a></article>
       </div>
     </section>
 
     <footer id="contact">
       <div class="footer-grid">
-        <h2>LET'S<br>BUILD</h2>
-        <div>
-          <p>Looking for junior roles where creative taste, business sense and practical AI/workflow fluency matter.</p>
-          <div class="links"><a href="mailto:mail@stavrosmavrommatis.com">Email</a><a href="assets/stavros-mavrommatis-cv.pdf">CV</a><a href="#top">Back up</a></div>
-        </div>
+        <h2>CONTACT</h2>
+        <div><p>Based in London. I’m looking for work around creative technology, events, CRM, marketing and production.</p><div class="links"><a href="mailto:mail@stavrosmavrommatis.com">Email</a><a href="#top">Back up</a></div></div>
       </div>
-      <div class="micro"><span>Stavros Mavrommatis / London</span><span>Product, growth, media and operations</span><span>stavrosmavrommatis.com</span></div>
+      <div class="micro"><span>Stavros Mavrommatis / London</span><span>Portfolio and web CV</span><span>stavrosmavrommatis.com</span></div>
     </footer>
   </main>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Expanded portfolio item">
+    <div class="lightbox-inner">
+      <div class="lightbox-bar"><div class="lightbox-title" id="lightbox-title"></div><button class="lightbox-close" type="button">Close</button></div>
+      <div class="lightbox-media" id="lightbox-media"></div>
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+  </dialog>
+  <script>
+    const dialog = document.getElementById('lightbox');
+    const media = document.getElementById('lightbox-media');
+    const title = document.getElementById('lightbox-title');
+    const caption = document.getElementById('lightbox-caption');
+    document.querySelectorAll('[data-kind]').forEach((item) => {
+      item.addEventListener('click', (event) => {
+        const kind = item.dataset.kind;
+        if (!kind) return;
+        event.preventDefault();
+        title.textContent = item.dataset.title || '';
+        caption.textContent = item.dataset.caption || '';
+        media.innerHTML = kind === 'video'
+          ? `<video src="${item.dataset.src}" controls autoplay playsinline></video>`
+          : `<img src="${item.dataset.src}" alt="${item.dataset.title || 'Expanded portfolio item'}">`;
+        dialog.showModal();
+      });
+    });
+    document.querySelector('.lightbox-close').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+    dialog.addEventListener('close', () => { media.innerHTML = ''; });
+  </script>
 </body>
 </html>
