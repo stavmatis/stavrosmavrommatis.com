@@ -70,3 +70,9 @@ Research checked during the revision:
 Implementation choice: used a small native `<dialog>` lightbox instead of adding an external gallery dependency. It keeps the static site self-contained, supports click-to-enlarge images and a short video sample, and avoids making visitors guess whether thumbnails are interactive.
 
 Current public structure: `Summary`, `Roles`, `Output`, `Study`, `Projects`, `Contact`. The output section is ready for 8-10 stronger creative assets once provided. Study now prioritizes FilmPulse / Kaleidoscope, the VFX/AI dissertation extract, and an Off The Record short sample; YouthFlick, FilmPulse system and the AI documentary pitch were removed from the page.
+
+## 2026-06-14 late portfolio update
+
+- Added the user-supplied delivered Team Pyxi email screenshot for `Pyxi's Culture Edit - March Edition` as `assets/pyxi-culture-edit-march-email-screenshot.jpg` and used it in the Output gallery.
+- Identified the first UGC video as `/tmp/pyxi-portfolio/pyxi/2_marketing/content-packages/legacy/content-package-6/ugc.mp4` because it is the earliest numbered UGC content package and predates `content-package-7/ugc-2.mp4` by file birth/modified time.
+- Web-optimised that source to `assets/pyxi-first-ugc.mp4` with poster `assets/pyxi-first-ugc-poster.jpg`, then replaced the previous `AI visual workflow` gallery slot with the UGC edit.
