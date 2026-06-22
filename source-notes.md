@@ -35,7 +35,7 @@ Built from the source materials available locally on 2026-06-12.
 
 ## Strongest proof selected
 
-- Pyxi / Culture Edit: launched from inception, curated 15+ events, drove 70 paid ticket purchases, £600+ in two months, worked across engineering/marketing/ops, managed acquisition campaigns, KPI/CPA/conversion reporting.
+- Pyxi / Culture Edit: launched from inception, curated 15+ events, drove 70 paid ticket purchases, £1,000+ in two months, worked across engineering/marketing/ops, managed acquisition campaigns, KPI/CPA/conversion reporting.
 - Pyxi ownership-plan evidence: positioned Culture Edit as a growth/revenue driver; documented 2,953 total leads, 294 Culture Edit leads, 194 usable Culture Edit leads, 9 early experiences, 8-experience/month strategy, HubSpot email marketing, Meta ad tests, budget discipline, weekly dashboards and operational fixes.
 - Pyxi ops internship: venue/partner/user comms, guest logistics, app testing, bug spotting, QR feedback process changes, Slack channel setup, CRM email setup, marketing automation, UGC/video editing, promotional stories and workflow standardisation.
 - FilmPulse / University of York: marketing/content creation role, domain setup, website drafting and maintenance, digital assets/presentation graphics, festival logistics, screening and networking event with 50+ attendees, Screen Yorkshire partnership, and 3+ hours of documentary material organised.
