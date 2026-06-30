@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    html{scroll-behavior:smooth;background:#f1f1e9}
+    body{margin:0}
+    .lb-scroll{overflow:hidden}
+    @media(max-width:1050px){
+      .m-hero,.m-overview,.m-outputhead,.m-feature,.m-study,.m-footer{grid-template-columns:1fr!important}
+      .m-projects,.m-results{grid-template-columns:1fr 1fr!important}
+      .m-gallery{grid-template-columns:1fr 1fr!important}
+      .m-heroPhoto{min-height:auto!important;margin-left:0!important}
+      .m-heroPhoto img{height:auto!important;aspect-ratio:16/10}
+    }
+    @media(max-width:640px){
+      .m-projects,.m-results{grid-template-columns:1fr!important}
+      .topstrip{grid-template-columns:1fr 1fr!important}
+      .topstrip .center{display:none!important}
+      .m-heroPhoto{margin:0 -16px!important}
+      .micro{flex-direction:column;gap:6px}
+    }
+  </style>
+</helmet>
+
+<main style="width:100%;margin:0;background:#f1f1e9;overflow:hidden;color:#090909;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif">
+
+  <div class="topstrip" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;align-items:start;padding:18px clamp(14px,4vw,72px) 11px;border-bottom:1px solid rgba(10,10,10,.28);font-size:9px;letter-spacing:.12em;text-transform:uppercase">
+    <span>Portfolio / CV</span>
+    <span style="text-align:center">Product · marketing · events</span>
+    <span style="text-align:right">London, UK</span>
+  </div>
+
+  <section id="top" style="padding-left:clamp(14px,4vw,72px);padding-right:clamp(14px,4vw,72px);padding-top:18px;padding-bottom:clamp(44px,5vw,76px)">
+    <h1 style="font-family:'Arial Black',Impact,Haettenschweiler,'Helvetica Neue Condensed Black',sans-serif;font-size:clamp(74px,13vw,180px);letter-spacing:-.08em;line-height:.68;margin:0 0 18px;text-transform:uppercase">STAVROS</h1>
+    <div class="m-hero" style="display:grid;grid-template-columns:1.35fr .65fr;gap:clamp(22px,3.6vw,52px);align-items:stretch">
+      <figure class="m-heroPhoto" style="margin:0;margin-left:calc(clamp(14px,4vw,72px) * -1);background:#f8f6ee;padding:0;min-height:clamp(560px,72vh,920px);overflow:hidden">
+        <img src="assets/speaking-wide.jpg" alt="Stavros Mavrommatis speaking at the University of York" style="width:100%;height:100%;min-height:inherit;object-fit:cover;object-position:center;filter:saturate(.86) contrast(1.03)">
+      </figure>
+      <div style="display:flex;flex-direction:column;gap:36px;min-height:100%">
+        <nav aria-label="Portfolio menu" style="border-top:1px solid #090909;border-bottom:1px solid #090909;padding:8px 0;display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+          <span style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#5d5b54;padding-right:14px;border-right:1px solid rgba(10,10,10,.28)">Menu</span>
+          <a href="#overview" style="font-size:10px;letter-spacing:.09em;text-transform:uppercase;padding:8px 12px;border:1px solid transparent;border-radius:999px;color:inherit" style-hover="border:1px solid #090909;background:#d8cbff">Overview</a>
+          <a href="#work" style="font-size:10px;letter-spacing:.09em;text-transform:uppercase;padding:8px 12px;border:1px solid transparent;border-radius:999px;color:inherit" style-hover="border:1px solid #090909;background:#d8cbff">Work</a>
+          <a href="#output" style="font-size:10px;letter-spacing:.09em;text-transform:uppercase;padding:8px 12px;border:1px solid transparent;border-radius:999px;color:inherit" style-hover="border:1px solid #090909;background:#d8cbff">Creative</a>
+          <a href="#study" style="font-size:10px;letter-spacing:.09em;text-transform:uppercase;padding:8px 12px;border:1px solid transparent;border-radius:999px;color:inherit" style-hover="border:1px solid #090909;background:#d8cbff">Study</a>
+          <a href="#contact" style="font-size:10px;letter-spacing:.09em;text-transform:uppercase;padding:8px 12px;border:1px solid transparent;border-radius:999px;color:inherit" style-hover="border:1px solid #090909;background:#d8cbff">Contact</a>
+        </nav>
+        <div>
+          <h2 style="font-family:Georgia,'Times New Roman',serif;font-weight:500;font-size:clamp(34px,4.6vw,62px);line-height:.95;letter-spacing:-.055em;margin:18px 0 22px;max-width:680px">I’m Stavros Mavrommatis, based in London. I work across product, marketing and events.</h2>
+          <p style="max-width:590px;color:#2d2b27;font-size:16px;line-height:1.5;margin:0 0 24px">At Pyxi, I helped run a paid cultural events product, covering event research, campaign creative, CRM and email, partner assets, app testing and guest operations. I use Canva for campaign assets, cut short video, and use AI-assisted visuals where they fit the campaign.</p>
+          <div aria-label="Profile links" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+            <a href="https://stavrosmavrommatis.com/assets/stavros-mavrommatis-cv.pdf" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:#d8cbff;min-height:54px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);padding:0 30px;color:inherit" style-hover="background:#111;color:#fff">CV</a>
+            <a href="https://www.linkedin.com/in/stavros-mavrommatis-54248920a" aria-label="LinkedIn profile" title="LinkedIn" style="display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:#d8cbff;width:54px;height:54px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);color:inherit" style-hover="background:#111;color:#fff"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;display:block"><path d="M8 11v5"></path><path d="M8 8v.01"></path><path d="M12 16v-5"></path><path d="M16 16v-3a2 2 0 0 0-4 0"></path><path d="M3 7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"></path></svg></a>
+            <a href="mailto:mail@stavrosmavrommatis.com" aria-label="Email Stavros" title="Email" style="display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:#d8cbff;width:54px;height:54px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);color:inherit" style-hover="background:#111;color:#fff"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;display:block"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><path d="m3 7 9 6 9-6"></path></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="overview" style="background:#111;color:#fff;padding-left:clamp(14px,4vw,72px);padding-right:clamp(14px,4vw,72px);padding-top:clamp(56px,6.5vw,104px);padding-bottom:clamp(52px,6vw,96px)">
+    <p style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#d8cbff;margin:0 0 18px">Overview</p>
+    <h2 style="font-family:'Arial Black',Impact,Haettenschweiler,sans-serif;font-size:clamp(68px,12vw,178px);letter-spacing:-.084em;line-height:.84;text-transform:uppercase;margin:0 0 clamp(34px,3.6vw,58px)">SUMMARY</h2>
+    <div class="m-overview" style="display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(24px,5vw,72px);align-items:start">
+      <p style="font-family:Georgia,'Times New Roman',serif;font-size:clamp(30px,4vw,58px);line-height:.95;letter-spacing:-.05em;margin:0">Recent work spans paid events, campaign creative and short video.</p>
+      <p style="font-size:16px;line-height:1.52;max-width:650px;margin:4px 0 0;color:#f3f0e8">Most of my experience has been at Pyxi and the University of York. At Pyxi I helped run a paid cultural events product from concept through campaign creative, guest operations and reporting. At York my main projects were the FilmPulse / Kaleidoscope Film Festival and a final-year dissertation on VFX, AI and labour.</p>
+    </div>
+    <div class="m-results" aria-label="Selected results" style="display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.28);border-bottom:1px solid rgba(255,255,255,.28);margin-top:30px">
+      <div style="padding:18px 16px;border-right:1px solid rgba(255,255,255,.18)"><b style="display:block;font-family:Georgia,serif;font-size:38px;font-weight:400;line-height:1">15+</b><span style="display:block;margin-top:8px;font-size:10px;line-height:1.35;text-transform:uppercase;letter-spacing:.07em;color:#e8e3d6">events run for Pyxi’s cultural programme</span></div>
+      <div style="padding:18px 16px;border-right:1px solid rgba(255,255,255,.18)"><b style="display:block;font-family:Georgia,serif;font-size:38px;font-weight:400;line-height:1">70</b><span style="display:block;margin-top:8px;font-size:10px;line-height:1.35;text-transform:uppercase;letter-spacing:.07em;color:#e8e3d6">paid tickets in the first two months</span></div>
+      <div style="padding:18px 16px;border-right:1px solid rgba(255,255,255,.18)"><b style="display:block;font-family:Georgia,serif;font-size:38px;font-weight:400;line-height:1">£1,000+</b><span style="display:block;margin-top:8px;font-size:10px;line-height:1.35;text-transform:uppercase;letter-spacing:.07em;color:#e8e3d6">revenue from the first paid events</span></div>
+      <div style="padding:18px 16px"><b style="display:block;font-family:Georgia,serif;font-size:38px;font-weight:400;line-height:1">50+</b><span style="display:block;margin-top:8px;font-size:10px;line-height:1.35;text-transform:uppercase;letter-spacing:.07em;color:#e8e3d6">attendees at the York screening with Screen Yorkshire</span></div>
+    </div>
+  </section>
+
+  <section id="work" style="background:#111;color:#fff;padding-left:clamp(14px,4vw,72px);padding-right:clamp(14px,4vw,72px);padding-top:clamp(34px,4vw,62px);padding-bottom:clamp(30px,4vw,58px)">
+    <p style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#d8cbff;margin:0 0 10px">Selected work</p>
+    <h2 style="font-family:'Arial Black',Impact,Haettenschweiler,sans-serif;font-size:clamp(68px,12vw,178px);letter-spacing:-.084em;line-height:.84;text-transform:uppercase;margin:0 0 clamp(18px,2.4vw,42px)">WORK</h2>
+    <div class="m-projects" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#3a3a3a;border:1px solid #3a3a3a">
+      <article style="background:#111;padding:20px;min-height:260px;display:flex;flex-direction:column;align-items:flex-start">
+        <img src="assets/logo-pyxi.png" alt="Pyxi logo" style="width:82px;height:58px;object-fit:contain;object-position:left center;margin-bottom:18px">
+        <small style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#d8cbff">01 / Pyxi</small>
+        <h3 style="font-family:Georgia,serif;font-size:30px;line-height:1;letter-spacing:-.045em;margin:14px 0 14px">Product Manager</h3>
+        <p style="font-size:13px;line-height:1.42;color:#e7e3db;margin:0 0 14px">Paid cultural events product covering event concepts, campaign creative, partner assets, reporting and live coordination.</p>
+        <a href="https://www.pyxi.ai/" style="margin-top:auto;border-bottom:1px solid rgba(255,255,255,.45);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#fff">Pyxi website</a>
+      </article>
+      <article style="background:#111;padding:20px;min-height:260px;display:flex;flex-direction:column;align-items:flex-start">
+        <img src="assets/logo-pyxi.png" alt="Pyxi logo" style="width:82px;height:58px;object-fit:contain;object-position:left center;margin-bottom:18px">
+        <small style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#d8cbff">02 / Pyxi internship</small>
+        <h3 style="font-family:Georgia,serif;font-size:30px;line-height:1;letter-spacing:-.045em;margin:14px 0 14px">Operations Support</h3>
+        <p style="font-size:13px;line-height:1.42;color:#e7e3db;margin:0 0 14px">Venue communication, guest flows, app testing, CRM and email setup, QR feedback and on-the-day delivery.</p>
+        <a href="https://www.pyxi.ai/" style="margin-top:auto;border-bottom:1px solid rgba(255,255,255,.45);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#fff">Pyxi website</a>
+      </article>
+      <article style="background:#111;padding:20px;min-height:260px;display:flex;flex-direction:column;align-items:flex-start">
+        <img src="assets/logo-filmpulse.png" alt="FilmPulse logo" style="width:150px;height:64px;object-fit:contain;object-position:left center;margin-bottom:18px">
+        <small style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#d8cbff">03 / FilmPulse</small>
+        <h3 style="font-family:Georgia,serif;font-size:30px;line-height:1;letter-spacing:-.045em;margin:14px 0 14px">Website and Content Manager</h3>
+        <p style="font-size:13px;line-height:1.42;color:#e7e3db;margin:0 0 14px">Website, content and event support for a York student film platform, including a 50+ attendee screening with Screen Yorkshire.</p>
+        <a href="https://www.york.ac.uk/arts-creative-technologies/" style="margin-top:auto;border-bottom:1px solid rgba(255,255,255,.45);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#fff">York school</a>
+      </article>
+      <article style="background:#111;padding:20px;min-height:260px;display:flex;flex-direction:column;align-items:flex-start">
+        <img src="assets/logo-matchpoint-tight.png" alt="MatchPoint logo" style="width:126px;height:82px;object-fit:contain;object-position:left center;margin-bottom:18px">
+        <small style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#d8cbff">04 / MatchPoint</small>
+        <h3 style="font-family:Georgia,serif;font-size:30px;line-height:1;letter-spacing:-.045em;margin:14px 0 14px">Co-founder / Marketing Lead</h3>
+        <p style="font-size:13px;line-height:1.42;color:#e7e3db;margin:0 0 14px">IB-era student venture for booking sports venues and matching teammates, with work across marketing, market research and the business plan.</p>
+        <a href="https://www.jaworldwide.org/" style="margin-top:auto;border-bottom:1px solid rgba(255,255,255,.45);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#fff">Junior Achievement</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="output" style="background:#f1f1e9;padding-left:clamp(14px,4vw,72px);padding-right:clamp(14px,4vw,72px);padding-top:clamp(34px,4vw,62px);padding-bottom:clamp(30px,4vw,58px)">
+    <p style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#5d5b54;margin:0 0 10px">Creative work</p>
+    <div class="m-outputhead" style="display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(24px,5vw,64px);align-items:end">
+      <h2 style="font-family:'Arial Black',Impact,Haettenschweiler,sans-serif;font-size:clamp(68px,12vw,178px);letter-spacing:-.084em;line-height:.84;text-transform:uppercase;margin:0 0 clamp(18px,2.4vw,42px)">OUTPUT</h2>
+      <p style="font-size:16px;line-height:1.52;color:#27241f;max-width:650px">Event adverts, email creative, partner cards, short video and AI-assisted visuals. Most of it was made for Pyxi’s paid cultural events and used in live campaigns.</p>
+    </div>
+    <div class="m-feature" style="display:grid;grid-template-columns:1.05fr .95fr;gap:26px;margin-top:10px;align-items:start">
+      <button onClick="{{ openFeature }}" style="padding:0;display:flex;align-items:flex-start;justify-content:center;border:0;background:transparent;overflow:visible;cursor:pointer;width:100%">
+        <img src="assets/pyxi-culture-edit-newspaper.jpg" alt="Culture Edit print-style campaign creative" style="width:100%;height:auto;object-fit:contain;background:transparent">
+      </button>
+      <article style="background:#111;color:#fff;padding:26px;display:flex;flex-direction:column;justify-content:space-between">
+        <div>
+          <h3 style="font-family:Georgia,serif;font-size:clamp(38px,4vw,58px);line-height:.95;letter-spacing:-.05em;margin:0">Campaign work for Pyxi’s paid cultural events.</h3>
+          <p style="font-size:15px;line-height:1.5;color:#eee;margin:20px 0 0">Social adverts, event graphics, partner listings, email and short video for the Culture Edit programme.</p>
+        </div>
+      </article>
+    </div>
+    <div class="m-gallery" aria-label="Output gallery" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:20px">
+      <sc-for list="{{ galleryItems }}" as="item">
+        <button onClick="{{ item.onOpen }}" style="display:block;width:100%;margin:0;padding:0;text-align:left;cursor:pointer;color:inherit;border:0;background:transparent;position:relative;overflow:hidden">
+          {{ item.thumb }}
+          <span style="display:block;margin:7px 0 0;font-size:10px;line-height:1.35;text-transform:uppercase;letter-spacing:.07em;color:#4a4640">{{ item.label }}</span>
+        </button>
+      </sc-for>
+    </div>
+    <p style="font-size:12px;color:#5d5b54;margin:12px 0 0">Click any piece to open it.</p>
+  </section>
+
+  <section id="study" style="background:#e8e7dc;padding-left:clamp(14px,4vw,72px);padding-right:clamp(14px,4vw,72px);padding-top:clamp(34px,4vw,62px);padding-bottom:clamp(30px,4vw,58px)">
+    <p style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#5d5b54;margin:0 0 10px">University projects</p>
+    <h2 style="font-family:'Arial Black',Impact,Haettenschweiler,sans-serif;font-size:clamp(68px,12vw,178px);letter-spacing:-.084em;line-height:.84;text-transform:uppercase;margin:0 0 clamp(18px,2.4vw,42px)">STUDY</h2>
+    <div class="m-study" style="display:grid;grid-template-columns:.92fr 1.08fr;gap:22px;align-items:start">
+      <article style="border:1px solid rgba(10,10,10,.28);background:#f8f6ee;overflow:hidden;display:grid;grid-template-rows:auto 1fr;min-height:100%">
+        <a href="https://stavrosmavrommatis.com/assets/vfx-ai-dissertation-showcase.pdf" target="_blank" rel="noopener" aria-label="Open VFX and AI dissertation PDF" style="display:block;background:#fff"><img src="assets/vfx-ai-dissertation-first-page-preview.jpg?v=clean" alt="First page preview of the VFX and AI dissertation PDF" style="width:100%;height:clamp(260px,34vw,430px);object-fit:contain;object-position:center;background:#fff;padding:18px 18px 12px;border-bottom:1px solid rgba(10,10,10,.28)"></a>
+        <div style="padding:18px">
+          <small style="display:block;margin:0 0 8px;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#5d5b54">Research project</small>
+          <h3 style="font-family:Georgia,serif;letter-spacing:-.045em;margin:0;font-size:30px;line-height:1">VFX, AI and labour</h3>
+          <p style="font-size:13px;line-height:1.42;color:#24221e;margin:12px 0 14px">My final-year dissertation on visual effects labour, studio power, unionisation and the pressure AI is putting on the people behind screen work.</p>
+          <a href="https://stavrosmavrommatis.com/assets/vfx-ai-dissertation-showcase.pdf" target="_blank" rel="noopener" style="display:inline-flex;border:1px solid currentColor;border-radius:999px;padding:10px 14px;font-size:10px;text-transform:uppercase;letter-spacing:.07em;font-weight:800;background:transparent;color:inherit">Open PDF</a>
+        </div>
+      </article>
+      <article style="background:#111;color:#fff;display:flex;flex-direction:column">
+        <div style="padding:26px 28px 18px">
+          <h3 style="font-family:Georgia,serif;letter-spacing:-.045em;margin:0;font-size:clamp(34px,4vw,56px);line-height:.95">FilmPulse and Kaleidoscope Film Festival.</h3>
+          <p style="font-size:15px;line-height:1.5;color:#eee;margin:18px 0 0">I worked on the website and content for a student-run film festival at York, including the visual identity, site updates and the live screening with Screen Yorkshire.</p>
+        </div>
+        <div style="padding:0 18px 18px">
+          <button onClick="{{ openFilmpulse }}" style="position:relative;display:block;width:100%;padding:0;border:1px solid rgba(255,255,255,.18);cursor:pointer;background:#000;box-shadow:0 18px 50px rgba(0,0,0,.35);overflow:hidden">
+            <img src="assets/filmpulse-kaleidoscope-behind-scenes-poster.jpg" alt="FilmPulse / Kaleidoscope behind the scenes" style="width:100%;aspect-ratio:16/9;height:auto;object-fit:cover;object-position:center;display:block">
+            <span style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><span style="width:62px;height:62px;border-radius:999px;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:24px;height:24px;margin-left:3px" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span></span>
+          </button>
+        </div>
+      </article>
+    </div>
+    <article style="margin-top:14px;max-width:620px;overflow:hidden;border:1px solid rgba(10,10,10,.28);background:#f8f6ee">
+      <button onClick="{{ openOffRecord }}" style="position:relative;display:block;width:100%;padding:0;border:0;cursor:pointer;background:#111;overflow:hidden">
+        <img src="assets/off-the-record-poster.jpg" alt="Off The Record poster" style="height:260px;width:100%;object-fit:cover;display:block">
+        <span style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><span style="width:62px;height:62px;border-radius:999px;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" style="width:24px;height:24px;margin-left:3px" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></span></span>
+      </button>
+      <div style="padding:18px">
+        <small style="display:block;margin:0 0 8px;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#5d5b54">Screen production</small>
+        <h3 style="font-family:Georgia,serif;letter-spacing:-.045em;margin:0;font-size:30px;line-height:1">Off The Record</h3>
+        <p style="font-size:13px;line-height:1.42;color:#24221e;margin:12px 0 0">A first-year live broadcast project I worked on at York.</p>
+      </div>
+    </article>
+  </section>
+
+  <section aria-label="Signature sign-off" style="background:#f1f1e9;padding:clamp(22px,2.6vw,34px) clamp(14px,4vw,72px);border-top:1px solid rgba(10,10,10,.28)">
+    <div style="max-width:900px;margin-left:auto;display:grid;justify-items:end;gap:8px">
+      <p style="font-family:Georgia,serif;font-size:clamp(24px,3vw,38px);line-height:1;letter-spacing:-.04em;margin:0;color:#1f1d19">Thanks for reading,</p>
+      <img src="assets/stavros-signature-actual.png" alt="Stavros Mavrommatis signature" style="width:min(248px,56vw);height:auto;display:block;transform:rotate(-1deg);filter:contrast(1.08)">
+    </div>
+  </section>
+
+  <footer id="contact" style="background:#d8cbff;padding:clamp(34px,5vw,72px) clamp(14px,4vw,72px) 34px">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,64px);align-items:end;border-top:1px solid rgba(0,0,0,.22);padding-top:clamp(28px,3.5vw,52px)" class="m-footer">
+      <h2 style="font-family:'Arial Black',Impact,Haettenschweiler,sans-serif;font-size:clamp(64px,10vw,146px);letter-spacing:-.085em;line-height:.88;margin:0;text-transform:uppercase">CONTACT</h2>
+      <div>
+        <p style="font-family:Georgia,serif;font-size:clamp(26px,3vw,40px);line-height:1;letter-spacing:-.04em;margin:0 0 20px">Based in London. Open to roles in product, marketing, events and CRM.</p>
+        <div aria-label="Contact links" style="display:flex;flex-wrap:wrap;gap:10px">
+          <a href="mailto:mail@stavrosmavrommatis.com" aria-label="Email Stavros" title="Email" style="width:48px;height:48px;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(0,0,0,.18);border-radius:999px;background:rgba(255,255,255,.28);color:#111" style-hover="background:#111;color:#fff"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7"></path><path d="m3 7 9 6 9-6"></path></svg></a>
+          <a href="https://www.linkedin.com/in/stavros-mavrommatis-54248920a" aria-label="LinkedIn profile" title="LinkedIn" style="width:48px;height:48px;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(0,0,0,.18);border-radius:999px;background:rgba(255,255,255,.28);color:#111" style-hover="background:#111;color:#fff"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px"><path d="M8 11v5"></path><path d="M8 8v.01"></path><path d="M12 16v-5"></path><path d="M16 16v-3a2 2 0 1 0-4 0"></path><path d="M3 7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7"></path></svg></a>
+          <a href="#top" aria-label="Back to top" title="Back to top" style="width:48px;height:48px;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(0,0,0,.18);border-radius:999px;background:rgba(255,255,255,.28);color:#111" style-hover="background:#111;color:#fff"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px"><path d="M12 5v14"></path><path d="m18 11-6-6"></path><path d="m6 11 6-6"></path></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="micro" style="display:flex;justify-content:space-between;font-size:9px;text-transform:uppercase;letter-spacing:.08em;margin-top:20px;color:#322d45">
+      <span>Stavros Mavrommatis / London</span>
+      <span>Portfolio and web CV</span>
+      <span>stavrosmavrommatis.com</span>
+    </div>
+  </footer>
+</main>
+
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <rect width="200" height="200" fill="#d8cbff"></rect>
+    <text x="100" y="125" text-anchor="middle" font-family="'Arial Black',Impact,sans-serif" font-size="78" fill="#111" letter-spacing="-4">SM</text>
+  </svg>
+</template>
+
+<sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeLightbox }}" style="position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;padding:24px">
+    <div style="width:min(1100px,94vw);background:#111;color:#fff;box-shadow:0 30px 120px rgba(0,0,0,.45);padding:16px">
+      <div style="display:flex;justify-content:space-between;gap:18px;align-items:center;margin-bottom:12px">
+        <div style="font-size:11px;text-transform:uppercase;letter-spacing:.1em">{{ lbTitle }}</div>
+        <button onClick="{{ closeLightbox }}" style="border:1px solid rgba(255,255,255,.4);background:transparent;color:#fff;border-radius:999px;padding:8px 12px;cursor:pointer">Close</button>
+      </div>
+      <div style="display:flex;align-items:flex-start;justify-content:center;max-height:84vh;overflow:auto;background:#000">{{ lbMedia }}</div>
+      <p style="font-size:13px;line-height:1.45;color:#ddd;margin:12px 0 0">{{ lbCaption }}</p>
+    </div>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { lb: null };
+
+  open(kind, src, title, caption) {
+    this.setState({ lb: { kind, src, title, caption } });
+  }
+
+  close = (e) => {
+    if (e && e.currentTarget !== e.target) return;
+    this.setState({ lb: null });
+  };
+
+  renderVals() {
+    const REMOTE = 'https://stavrosmavrommatis.com/assets/';
+    const gallery = [
+      { kind: 'image', src: REMOTE + 'pyxi-ce-email.png', poster: REMOTE + 'pyxi-ce-email.png', alt: 'March Culture Edit email creative', label: 'March email', title: 'Culture Edit March email', caption: 'Email creative for the March Culture Edit campaign.' },
+      { kind: 'video', src: REMOTE + 'pyxi-first-ugc.mp4', poster: 'assets/pyxi-first-ugc-poster.jpg', alt: 'Poster frame from a Pyxi social edit', label: 'Social edit', title: 'Pyxi social edit', caption: 'Short social edit for Pyxi event marketing.' },
+      { kind: 'video', src: REMOTE + 'pyxi-222-inspired-2.mp4', poster: 'assets/pyxi-222-inspired-2-poster.jpg', alt: 'Pyxi 222-inspired jazz video advert poster', label: 'Video advert', title: 'Jazz night video advert', caption: 'Short video advert for a Pyxi jazz event, using the Pyxi 222-inspired edit.' },
+      { kind: 'video', src: REMOTE + 'pyxi-sky-garden-creative.mp4', poster: 'assets/pyxi-sky-garden-creative-poster.jpg', alt: 'Sky Garden video creative poster', label: 'Video creative', title: 'Sky Garden video creative', caption: 'Short video creative for a Pyxi event at Sky Garden.' },
+    ];
+
+    const galleryItems = gallery.map((g) => ({
+      ...g,
+      thumb: React.createElement('img', { src: g.poster, alt: g.alt, style: { width: '100%', height: 'auto', objectFit: 'cover', background: 'transparent', filter: 'saturate(.98) contrast(1.02)', display: 'block' } }),
+      onOpen: () => this.open(g.kind, g.src, g.title, g.caption),
+    }));
+
+    const lb = this.state.lb;
+    let lbMedia = null;
+    if (lb) {
+      lbMedia = lb.kind === 'video'
+        ? React.createElement('video', { src: lb.src, controls: true, autoPlay: true, playsInline: true, style: { maxHeight: '84vh', maxWidth: '100%', width: 'auto', display: 'block', background: '#000' } })
+        : React.createElement('img', { src: lb.src, alt: lb.title || 'Expanded portfolio item', style: { width: '100%', height: 'auto', display: 'block', background: '#000' } });
+    }
+
+    return {
+      galleryItems,
+      openFeature: () => this.open('image', 'assets/pyxi-culture-edit-newspaper.jpg', 'Culture Edit campaign creative', 'Print-style creative for Culture Edit, Pyxi’s paid cultural events series.'),
+      openFilmpulse: () => this.open('video', REMOTE + 'filmpulse-kaleidoscope-behind-scenes.mp4', 'FilmPulse / Kaleidoscope behind the scenes', 'Behind the scenes of the FilmPulse / Kaleidoscope Film Festival at York.'),
+      openOffRecord: () => this.open('video', REMOTE + 'off-the-record-full.mp4', 'Off The Record', 'A first-year live broadcast project I worked on at York.'),
+      closeLightbox: this.close,
+      lbOpen: !!lb,
+      lbTitle: lb ? lb.title : '',
+      lbCaption: lb ? lb.caption : '',
+      lbMedia,
+    };
+  }
+}
+</script>
+</body>
+</html>
