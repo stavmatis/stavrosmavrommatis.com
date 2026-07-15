@@ -155,14 +155,14 @@
     }
     .brand::before {
       content: "";
-      width: 14px;
-      height: 14px;
+      width: 17px;
+      height: 17px;
       display: inline-block;
-      flex: 0 0 14px;
+      flex: 0 0 17px;
       margin-right: 9px;
-      background: var(--magenta);
+      background: #c62ee8;
       clip-path: polygon(34% 0, 66% 0, 66% 34%, 100% 34%, 100% 66%, 66% 66%, 66% 100%, 34% 100%, 34% 66%, 0 66%, 0 34%, 34% 34%);
-      filter: drop-shadow(0 0 6px rgba(231, 144, 255, .62));
+      filter: drop-shadow(0 0 1px rgba(255, 255, 255, .95)) drop-shadow(0 2px 7px rgba(42, 21, 48, .72));
     }
 
     .hero {
@@ -318,17 +318,17 @@
     .service-card.aqua { min-height: 360px; background: var(--aqua); }
     .service-card.dark { color: white; background: var(--plum-deep); }
     .service-card header { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
-    .service-card .card-no { font-size: 10px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; opacity: .58; }
+    .service-card .card-no { font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; opacity: .68; }
     .card-icon { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid currentColor; border-radius: 50%; opacity: .72; }
     .card-icon svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
     .service-card h3 { max-width: 360px; margin: 0; font-size: clamp(29px, 2.7vw, 43px); line-height: .94; letter-spacing: -.06em; font-weight: 500; }
     .service-card > div { display: grid; grid-template-rows: auto minmax(66px, auto) auto; }
     .service-card ul { margin: 18px 0 0; padding: 0; list-style: none; }
-    .service-card li { display: flex; gap: 8px; margin-top: 6px; font-size: 10px; line-height: 1.35; opacity: .7; }
+    .service-card li { display: flex; gap: 8px; margin-top: 8px; font-size: 12px; line-height: 1.45; opacity: .78; }
     .service-card li::before { content: "→"; flex: 0 0 auto; }
     .card-stat { min-height: 64px; display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 13px; margin-top: 23px; padding-top: 17px; border-top: 1px solid currentColor; border-color: color-mix(in srgb, currentColor 20%, transparent); }
     .card-stat strong { font-size: 38px; line-height: 1; letter-spacing: -.06em; }
-    .card-stat span { max-width: 150px; font-size: 10px; line-height: 1.32; letter-spacing: .045em; text-transform: uppercase; opacity: .72; }
+    .card-stat span { max-width: 160px; font-size: 11px; line-height: 1.38; letter-spacing: .04em; text-transform: uppercase; opacity: .76; }
 
     .work { background: var(--cream); }
     .section-head {
@@ -479,7 +479,7 @@
     .article-card.pdf .article-media.york-media {
       display: grid;
       place-items: center;
-      background: radial-gradient(circle at 50% 42%, #fffafd 0%, #decdf2 50%, #5d2f63 100%);
+      background: radial-gradient(circle at 50% 45%, #6d3c78 0%, #32183a 52%, #1d0e21 100%);
     }
     .article-card.pdf .york-media img { width: min(68%, 230px); height: auto; padding: 0; filter: drop-shadow(0 14px 25px rgba(42, 21, 48, .18)); }
     .matchpoint-media {
@@ -508,6 +508,7 @@
     .contact-actions svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
     .footer-panel {
+      position: relative;
       min-height: 300px;
       display: grid;
       grid-template-columns: 1.1fr .9fr;
@@ -529,6 +530,7 @@
       filter: drop-shadow(0 0 6px rgba(231, 144, 255, .45));
     }
     .footer-note { max-width: 420px; margin: 20px 0 0; color: rgba(255, 255, 255, .5); font-size: 12px; line-height: 1.5; }
+    .footer-signature { position: absolute; top: 28px; right: 38px; width: 88px; height: auto; opacity: .7; filter: invert(1); transform: rotate(-2deg); }
     .footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; align-content: start; }
     .footer-links small { display: block; margin-bottom: 13px; color: rgba(255, 255, 255, .42); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
     .footer-links a, .footer-links span { display: block; margin-top: 7px; font-size: 12px; }
@@ -626,6 +628,7 @@
       .contact { padding: 82px 14px 14px; }
       .contact-inner { margin-bottom: 88px; }
       .footer-panel { min-height: 460px; padding: 26px 22px; }
+      .footer-signature { top: 24px; right: 22px; width: 70px; }
       .footer-links { grid-template-columns: 1fr; }
       .footer-meta { display: grid; grid-template-columns: 1fr; }
     }
@@ -713,17 +716,17 @@
           <p class="section-intro">Campaign assets produced for Culture Edit at Pyxi. Open a card to see the original file.</p>
         </div>
         <div class="work-grid">
-          <button class="work-card culture" type="button" data-reveal data-kind="image" data-layout="portrait-image" data-src="../assets/pyxi-culture-edit-newspaper.jpg" data-title="Culture Edit event identity" data-caption="Print-style event creative used for Culture Edit listings and campaign assets.">
+          <button class="work-card culture" type="button" data-reveal data-kind="image" data-layout="portrait-image" data-src="../assets/pyxi-culture-edit-newspaper.jpg" data-title="Culture Edit campaign identity" data-caption="Print-style event creative used for Culture Edit listings and campaign assets.">
             <img src="./assets/work-culture.webp" alt="Culture Edit campaign creative" width="900" height="1125" loading="lazy" decoding="async">
-            <span class="work-copy"><small>Pyxi / Event campaign</small><h3>Event identity and social graphics for Culture Edit.</h3><span class="open-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span></span>
+            <span class="work-copy"><small>Pyxi / Event campaign</small><h3>Event campaign identity.</h3><span class="open-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span></span>
           </button>
-          <button class="work-card social" type="button" data-reveal style="--delay:70ms" data-kind="video" data-layout="portrait-video" data-src="../assets/pyxi-first-ugc.mp4" data-title="Pyxi campaign video" data-caption="A vertical social edit produced for an active Culture Edit campaign.">
+          <button class="work-card social" type="button" data-reveal style="--delay:70ms" data-kind="video" data-layout="portrait-video" data-src="../assets/pyxi-first-ugc.mp4" data-title="Short-form UGC video" data-caption="A vertical social edit produced for an active Culture Edit campaign.">
             <img src="./assets/work-social.webp" alt="Poster frame from a Pyxi social edit" width="640" height="1138" loading="lazy" decoding="async">
-            <span class="work-copy"><small>Pyxi / Short video</small><h3>Vertical campaign video for paid and organic social.</h3><span class="open-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span></span>
+            <span class="work-copy"><small>Pyxi / Short video</small><h3>Short-form UGC video.</h3><span class="open-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span></span>
           </button>
-          <button class="work-card email" type="button" data-reveal style="--delay:140ms" data-kind="image" data-layout="scroll-image" data-src="../assets/pyxi-ce-email.png" data-title="Culture Edit campaign email" data-caption="The full campaign email. Scroll inside the preview to inspect the complete layout.">
+          <button class="work-card email" type="button" data-reveal style="--delay:140ms" data-kind="image" data-layout="scroll-image" data-src="../assets/pyxi-ce-email.png" data-title="Culture Edit CRM campaign email" data-caption="The full campaign email. Scroll inside the preview to inspect the complete layout.">
             <img src="./assets/work-email.webp" alt="Culture Edit email creative" width="1100" height="1008" loading="lazy" decoding="async">
-            <span class="work-copy"><small>Pyxi / CRM + email</small><h3>Long-form email for a Culture Edit campaign.</h3><span class="open-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span></span>
+            <span class="work-copy"><small>Pyxi / CRM + email</small><h3>CRM campaign email.</h3><span class="open-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7"></path><path d="M9 7h8v8"></path></svg></span></span>
           </button>
         </div>
       </section>
@@ -746,11 +749,11 @@
 
       <section class="section faq">
         <div class="faq-layout">
-          <div class="faq-copy" data-reveal><p class="section-label">About the work / 04</p><h2>The useful details.</h2><p class="section-intro">Scope, results, tools and the roles I’m looking for.</p></div>
+          <div class="faq-copy" data-reveal><p class="section-label">About the work / 04</p><h2>The useful details.</h2><p class="section-intro">Scope, proof, tools and the teams where I do my best work.</p></div>
           <div class="faq-list" data-reveal style="--delay:80ms">
             <details open><summary>What kinds of work do you typically take on?</summary><p>Event research and curation, campaign creative, social and paid-test assets, CRM and email, partner materials, app testing, KPI reporting, community work and event operations.</p></details>
-            <details><summary>How do you approach a rough brief?</summary><p>I get clear on the goal, research the context, map the moving parts and build what the work needs. Then I test the experience, track the useful signals and use the feedback to improve the next version.</p></details>
-            <details><summary>What roles are you looking for?</summary><p>Junior roles in product, marketing, events, CRM, creative, community or operations. I work best where audience thinking and hands-on delivery both matter.</p></details>
+            <details><summary>What’s the strongest proof the work has landed?</summary><p>Culture Edit at Pyxi. I helped launch the paid events line, curate 15+ London experiences and drive 70 paid ticket purchases and £1,000+ in revenue in its first two months. It brought campaign creative, acquisition, partner assets, guest operations and reporting into one live offer.</p></details>
+            <details><summary>What kind of team suits you best?</summary><p>A small team where junior people can own useful work and move between thinking and delivery. At Pyxi that has meant switching between campaign assets, CRM and email, partner materials, app testing, guest operations and weekly reporting — always tied to a live product rather than a theoretical brief.</p></details>
             <details><summary>What tools do you work with?</summary><p>Photoshop, Illustrator, InDesign, Canva, Premiere Pro, DaVinci Resolve, HubSpot, CRM and email platforms, Excel, plus practical AI-assisted workflows for research, copy and production.</p></details>
           </div>
         </div>
@@ -776,6 +779,7 @@
       <section class="contact" id="contact">
         <div class="contact-inner" data-reveal><p class="section-label">Contact / 06</p><h2>Get in touch.</h2><p>London-based and open to junior roles across product, marketing, CRM, creative operations and cultural events.</p><div class="contact-actions" aria-label="Contact links"><a href="mailto:mail@stavrosmavrommatis.com" aria-label="Email Stavros" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7"></path><path d="m3 7 9 6 9-6"></path></svg><span class="sr-only">Email</span></a><a href="https://www.linkedin.com/in/stavros-mavrommatis-54248920a" target="_blank" rel="noopener" aria-label="LinkedIn profile" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 11v5"></path><path d="M8 8v.01"></path><path d="M12 16v-5"></path><path d="M16 16v-3a2 2 0 1 0-4 0"></path><path d="M3 7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7"></path></svg><span class="sr-only">LinkedIn</span></a><a href="../assets/stavros-mavrommatis-cv.pdf?v=privacy-20260716" target="_blank" rel="noopener" aria-label="Open CV" title="CV"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M8 13h8"></path><path d="M8 17h6"></path></svg><span class="sr-only">CV</span></a></div></div>
         <footer class="footer-panel" data-reveal>
+          <img class="footer-signature" src="../assets/stavros-signature-actual.png?v=actual-20260625" alt="" aria-hidden="true" width="1288" height="559" loading="lazy" decoding="async">
           <div><div class="footer-brand">Stavros.</div><p class="footer-note">Work by Stavros Mavrommatis — London, 2026.</p></div>
           <div class="footer-links"><div><small>Navigate</small><a href="#top">Home</a><a href="#work">Work</a><a href="#study">Study</a></div><div><small>Contact</small><a href="mailto:mail@stavrosmavrommatis.com">Email</a><a href="https://www.linkedin.com/in/stavros-mavrommatis-54248920a" target="_blank" rel="noopener">LinkedIn</a><span>London, UK</span></div></div>
           <div class="footer-meta"><span>Stavros Mavrommatis</span><span>Product · marketing · events</span><span>London, UK</span></div>
