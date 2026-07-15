@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Stavros Mavrommatis — Portfolio Concept</title>
+  <title>Stavros Mavrommatis | Portfolio Concept</title>
   <meta name="description" content="A framed, interactive portfolio for Stavros Mavrommatis: product, marketing, events and creative work.">
   <meta name="robots" content="noindex,nofollow">
   <meta name="theme-color" content="#e790ff">
@@ -232,7 +232,7 @@
     }
     .hero-actions { display: flex; align-items: center; gap: 17px; margin-top: 26px; }
     .pill-button {
-      min-height: 43px;
+      min-height: 44px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -246,6 +246,17 @@
       transition: transform .2s ease, box-shadow .2s ease;
     }
     .pill-button:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(231, 144, 255, .28); }
+    .pill-button .button-arrow {
+      width: 20px;
+      height: 20px;
+      display: block;
+      overflow: visible;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
 
     .brand-rail {
       position: relative;
@@ -593,14 +604,16 @@
       body::before, .ambient, .progress-track { display: none; }
       .stage { height: auto; padding: 0; }
       .portfolio-window { height: auto; overflow: visible; border: 0; border-radius: 0; box-shadow: none; }
-      .nav { position: absolute; top: 12px; left: 12px; right: 12px; grid-template-columns: 1fr auto; }
+      .nav { position: absolute; top: max(12px, env(safe-area-inset-top)); left: 14px; right: 14px; grid-template-columns: 1fr auto; gap: 10px; }
       .nav-pills { display: none; }
       .nav-actions a:first-child { display: none; }
-      .nav-actions a { min-height: 38px; }
-      .hero { min-height: 780px; }
+      .nav-actions a { min-height: 44px; padding: 0 16px; }
+      .brand { min-height: 44px; font-size: 21px; }
+      .brand::before { width: 20px; height: 20px; flex-basis: 20px; margin-right: 8px; }
+      .hero { min-height: max(780px, 100svh); }
       .hero picture img { object-position: 82% center; }
       .hero picture::after { background: linear-gradient(0deg, rgba(31, 12, 36, .95) 0%, rgba(44, 17, 51, .2) 76%); }
-      .hero-content { grid-template-columns: 1fr; gap: 0; padding: 112px 20px 38px; }
+      .hero-content { grid-template-columns: 1fr; gap: 0; padding: 112px 20px max(72px, calc(env(safe-area-inset-bottom) + 52px)); }
       .hero h1 { font-size: clamp(44px, 12vw, 58px); letter-spacing: -.055em; line-height: .92; }
       .hero-copy { font-size: 14px; }
       .hero-actions { flex-wrap: wrap; }
@@ -663,7 +676,7 @@
             <p class="eyebrow">Product · marketing · cultural events</p>
             <h1>I’m Stavros Mavrommatis, based in London.</h1>
             <p class="hero-copy">I work across product, marketing and cultural events. At Pyxi, I helped run a paid cultural events product, covering event research, campaign creative, CRM and email, partner assets, app testing and guest operations. I use Canva for campaign assets, cut short video, and use AI-assisted visuals where they fit the campaign.</p>
-            <div class="hero-actions"><a class="pill-button" href="#work">Explore the work <span aria-hidden="true">→</span></a></div>
+            <div class="hero-actions"><a class="pill-button" href="#work">Explore the work <svg class="button-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16"></path><path d="m15 7 5 5-5 5"></path></svg></a></div>
           </div>
         </div>
       </section>
@@ -693,7 +706,7 @@
             <p class="section-label">Overview / 01</p>
             <h2>Product, events and operations.</h2>
             <div class="body-copy">
-              <p><strong>Based in London, I work across product, marketing, events and operations</strong> — from research and curation to campaign creative, CRM and community.</p>
+              <p><strong>Based in London, I work across product, marketing, events and operations</strong>, from research and curation to campaign creative, CRM and community.</p>
               <p>I take work from a rough brief to delivery: making the assets, coordinating the moving parts, testing the experience and tracking what works.</p>
             </div>
           </div>
@@ -749,11 +762,11 @@
 
       <section class="section faq">
         <div class="faq-layout">
-          <div class="faq-copy" data-reveal><p class="section-label">About the work / 04</p><h2>The useful details.</h2><p class="section-intro">Scope, proof, tools and the teams where I do my best work.</p></div>
+          <div class="faq-copy" data-reveal><p class="section-label">About the work / 04</p><h2>The useful details.</h2><p class="section-intro">How the projects ran, what they delivered and the tools behind them.</p></div>
           <div class="faq-list" data-reveal style="--delay:80ms">
             <details open><summary>What kinds of work do you typically take on?</summary><p>Event research and curation, campaign creative, social and paid-test assets, CRM and email, partner materials, app testing, KPI reporting, community work and event operations.</p></details>
-            <details><summary>What’s the strongest proof the work has landed?</summary><p>Culture Edit at Pyxi. I helped launch the paid events line, curate 15+ London experiences and drive 70 paid ticket purchases and £1,000+ in revenue in its first two months. It brought campaign creative, acquisition, partner assets, guest operations and reporting into one live offer.</p></details>
-            <details><summary>What kind of team suits you best?</summary><p>A small team where junior people can own useful work and move between thinking and delivery. At Pyxi that has meant switching between campaign assets, CRM and email, partner materials, app testing, guest operations and weekly reporting — always tied to a live product rather than a theoretical brief.</p></details>
+            <details><summary>How did Culture Edit go from finding an event to running it?</summary><p>Each event moved through research and curation, listings, campaign assets, email and paid tests, partner materials, app checks, guest coordination and feedback. Across its first two months, the line featured 15+ London experiences, sold 70 tickets and made £1,000+ in revenue.</p></details>
+            <details><summary>How did FilmPulse support the Kaleidoscope festival?</summary><p>FilmPulse connected the online and live sides of the project. I managed its website, content and presentation assets while also supporting marketing and logistics for a screening and networking event attended by 50+ people and connected with Screen Yorkshire.</p></details>
             <details><summary>What tools do you work with?</summary><p>Photoshop, Illustrator, InDesign, Canva, Premiere Pro, DaVinci Resolve, HubSpot, CRM and email platforms, Excel, plus practical AI-assisted workflows for research, copy and production.</p></details>
           </div>
         </div>
@@ -780,7 +793,7 @@
         <div class="contact-inner" data-reveal><p class="section-label">Contact / 06</p><h2>Get in touch.</h2><p>London-based and open to junior roles across product, marketing, CRM, creative operations and cultural events.</p><div class="contact-actions" aria-label="Contact links"><a href="mailto:mail@stavrosmavrommatis.com" aria-label="Email Stavros" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7"></path><path d="m3 7 9 6 9-6"></path></svg><span class="sr-only">Email</span></a><a href="https://www.linkedin.com/in/stavros-mavrommatis-54248920a" target="_blank" rel="noopener" aria-label="LinkedIn profile" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 11v5"></path><path d="M8 8v.01"></path><path d="M12 16v-5"></path><path d="M16 16v-3a2 2 0 1 0-4 0"></path><path d="M3 7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7"></path></svg><span class="sr-only">LinkedIn</span></a><a href="../assets/stavros-mavrommatis-cv.pdf?v=privacy-20260716" target="_blank" rel="noopener" aria-label="Open CV" title="CV"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M8 13h8"></path><path d="M8 17h6"></path></svg><span class="sr-only">CV</span></a></div></div>
         <footer class="footer-panel" data-reveal>
           <img class="footer-signature" src="../assets/stavros-signature-actual.png?v=actual-20260625" alt="" aria-hidden="true" width="1288" height="559" loading="lazy" decoding="async">
-          <div><div class="footer-brand">Stavros.</div><p class="footer-note">Work by Stavros Mavrommatis — London, 2026.</p></div>
+          <div><div class="footer-brand">Stavros.</div><p class="footer-note">Work by Stavros Mavrommatis · London, 2026.</p></div>
           <div class="footer-links"><div><small>Navigate</small><a href="#top">Home</a><a href="#work">Work</a><a href="#study">Study</a></div><div><small>Contact</small><a href="mailto:mail@stavrosmavrommatis.com">Email</a><a href="https://www.linkedin.com/in/stavros-mavrommatis-54248920a" target="_blank" rel="noopener">LinkedIn</a><span>London, UK</span></div></div>
           <div class="footer-meta"><span>Stavros Mavrommatis</span><span>Product · marketing · events</span><span>London, UK</span></div>
         </footer>
