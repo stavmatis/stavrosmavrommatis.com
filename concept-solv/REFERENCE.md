@@ -2,20 +2,29 @@
 
 ## Visual reference
 
-- X post: https://x.com/bogdan_qclay/status/2077373587007094855
-- Creator: Bogdan / QClay
-- Inspected asset: 22.383-second, 2272×1440 interaction video attached to the post.
-- The implementation borrows the reference’s design mechanics, not its brand, copy, or assets.
+- Lafys post: https://lafys.com/posts/solv-finance-landing-page-1784119173679
+- Original showcase: Bogdan / QClay
+- Inspected asset: the complete 22.383-second, 2272×1440 interaction video, sampled at two frames per second and at every major scene change.
+- The implementation borrows the reference’s design mechanics and pacing, not its brand, copy, or assets.
 
-## Reused mechanics
+## Reused mechanics and sequence
 
-- A large rounded website viewport floating over a blurred, image-led backdrop.
-- Smooth scrolling inside the framed viewport on desktop, with a thin lime progress rail.
-- Full-bleed photographic hero with compact pill navigation and a floating status card.
-- White editorial sections, dark olive contrast sections, pale aqua/lilac cards, and electric-lime accents.
-- Oversized tightly tracked sans-serif headings and restrained micro-labels.
-- Mixed card scales, an interactive slider panel, a full-bleed film section, FAQ rows, and a soft-gradient contact close.
-- Mobile removes the nested framed viewport and becomes a normal edge-to-edge document.
+- A large rounded website viewport floating over a static, pre-blurred image backdrop.
+- A short opacity-and-transform entrance for the hero, followed by smooth native scrolling inside the framed viewport.
+- Compact pill navigation, full-bleed photography, a bottom-left editorial headline, and a floating white proof/chart card.
+- A looping organisation rail directly after the hero.
+- The reference’s section rhythm: split introduction with paired cards, three equal proof cards, an interactive lime calculator panel, a dark two-column FAQ, full-bleed moving media, article cards, pale-lime CTA, and dark rounded footer.
+- White editorial sections, dark olive contrast sections, pale aqua cards, electric-lime accents, tightly tracked sans-serif headings, and restrained micro-labels.
+- A thin lime progress rail that tracks the inner desktop scroller.
+- Mobile removes the nested frame and becomes a normal edge-to-edge document.
+
+## Performance choices
+
+- No animation or smooth-scroll library: entrance, marquee, reveal, and progress behavior use CSS plus small IntersectionObserver/requestAnimationFrame handlers.
+- The full-screen backdrop is a pre-blurred 1.2 KB WebP rather than a runtime blur filter.
+- The hero uses responsive 40 KB and 97 KB WebP sources with explicit dimensions and high fetch priority.
+- Card previews are cropped, resized WebPs. This avoids decoding or loading the original 5.3 MB long-form email PNG during page entry.
+- The full-bleed MP4 has no `src` until its section nears the viewport; it cannot compete with the hero during initial load.
 
 ## Portfolio source material
 
