@@ -6,36 +6,36 @@
   <title>Stavros Mavrommatis — Portfolio Concept</title>
   <meta name="description" content="A framed, interactive portfolio for Stavros Mavrommatis: product, marketing, events and creative work.">
   <meta name="robots" content="noindex,nofollow">
-  <meta name="theme-color" content="#dfff45">
+  <meta name="theme-color" content="#e790ff">
   <link rel="icon" href="../assets/favicon.png" type="image/png">
   <link rel="preload" as="image" href="./assets/hero-1600.webp" imagesrcset="./assets/hero-960.webp 960w, ./assets/hero-1600.webp 1600w" imagesizes="(max-width: 720px) 100vw, calc(100vw - 56px)" fetchpriority="high">
   <script>document.documentElement.classList.add('js')</script>
   <style>
     :root {
-      --ink: #182109;
-      --olive: #223805;
-      --olive-deep: #192d03;
-      --lime: #dfff45;
-      --lime-soft: #efffb3;
-      --paper: #fffef9;
-      --cream: #f4f2e9;
-      --aqua: #d9f0ee;
-      --lilac: #dfdcf3;
-      --line: rgba(24, 33, 9, .16);
-      --muted: #686e5d;
+      --ink: #2a1530;
+      --plum: #5d2f63;
+      --plum-deep: #241328;
+      --magenta: #e790ff;
+      --magenta-soft: #f4d5ff;
+      --paper: #fffafd;
+      --cream: #f6eef8;
+      --aqua: #eadfff;
+      --lilac: #decdf2;
+      --line: rgba(42, 21, 48, .16);
+      --muted: #74657b;
       --radius: 21px;
       --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
       --ease: cubic-bezier(.2, .72, .2, 1);
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; background: #87aaa2; }
+    html { scroll-behavior: smooth; background: #b892d0; }
     body {
       margin: 0;
       min-height: 100vh;
       overflow: hidden;
       color: var(--ink);
-      background: #87aaa2;
+      background: #b892d0;
       font-family: var(--sans);
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
@@ -45,7 +45,7 @@
       position: fixed;
       inset: 0;
       z-index: -2;
-      background: linear-gradient(115deg, rgba(17, 36, 19, .1), rgba(102, 196, 194, .24));
+      background: linear-gradient(115deg, rgba(49, 20, 58, .18), rgba(231, 144, 255, .22));
       pointer-events: none;
     }
     button, input { font: inherit; }
@@ -53,7 +53,7 @@
     a { color: inherit; text-decoration: none; }
     img, video { display: block; max-width: 100%; }
     button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visible {
-      outline: 3px solid var(--lime);
+      outline: 3px solid var(--magenta);
       outline-offset: 3px;
     }
 
@@ -82,7 +82,7 @@
       border: 1px solid rgba(255, 255, 255, .58);
       border-radius: var(--radius);
       background: var(--paper);
-      box-shadow: 0 28px 90px rgba(15, 36, 21, .24);
+      box-shadow: 0 28px 90px rgba(48, 20, 57, .3);
     }
     .portfolio-window::-webkit-scrollbar { display: none; }
     section { scroll-margin-top: 28px; }
@@ -103,8 +103,8 @@
       width: 100%;
       height: 0;
       border-radius: inherit;
-      background: var(--lime);
-      box-shadow: 0 0 14px rgba(223, 255, 69, .82);
+      background: var(--magenta);
+      box-shadow: 0 0 14px rgba(231, 144, 255, .82);
       will-change: height;
     }
 
@@ -127,7 +127,7 @@
       padding: 4px;
       border: 1px solid rgba(255, 255, 255, .2);
       border-radius: 999px;
-      background: rgba(27, 38, 19, .46);
+      background: rgba(45, 19, 52, .52);
       backdrop-filter: blur(10px);
     }
     .nav-pills a, .nav-actions a {
@@ -142,7 +142,7 @@
       transition: transform .2s ease, background .2s ease, color .2s ease;
     }
     .nav-pills a:hover { background: rgba(255, 255, 255, .16); }
-    .nav-actions a { background: rgba(24, 32, 17, .3); }
+    .nav-actions a { background: rgba(45, 19, 52, .34); }
     .nav-actions .primary { color: var(--ink); background: white; }
     .nav-actions a:hover { transform: translateY(-1px); }
     .brand {
@@ -151,7 +151,7 @@
       letter-spacing: -.045em;
       text-shadow: 0 1px 14px rgba(0, 0, 0, .2);
     }
-    .brand::before { content: "✦"; margin-right: 7px; color: var(--lime); }
+    .brand::before { content: "✦"; margin-right: 7px; color: var(--magenta); }
 
     .hero {
       position: relative;
@@ -160,7 +160,7 @@
       align-items: flex-end;
       overflow: hidden;
       color: white;
-      background: #222d17;
+      background: #35193d;
     }
     .hero picture, .hero picture::after {
       position: absolute;
@@ -173,8 +173,8 @@
     .hero picture::after {
       content: "";
       background:
-        linear-gradient(90deg, rgba(9, 14, 7, .78) 0%, rgba(9, 14, 7, .18) 58%, rgba(9, 14, 7, .06) 100%),
-        linear-gradient(0deg, rgba(9, 14, 7, .78) 0%, rgba(9, 14, 7, .08) 62%);
+        linear-gradient(90deg, rgba(31, 12, 36, .82) 0%, rgba(52, 19, 61, .22) 60%, rgba(52, 19, 61, .06) 100%),
+        linear-gradient(0deg, rgba(31, 12, 36, .82) 0%, rgba(31, 12, 36, .08) 62%);
     }
     .hero picture img {
       width: 100%;
@@ -187,9 +187,9 @@
       z-index: 2;
       width: 100%;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) clamp(210px, 20vw, 286px);
+      grid-template-columns: minmax(0, 930px);
       align-items: end;
-      gap: clamp(34px, 7vw, 104px);
+      gap: 0;
       padding: clamp(120px, 18vh, 190px) clamp(28px, 5vw, 78px) clamp(38px, 6vh, 70px);
     }
     .eyebrow {
@@ -204,15 +204,15 @@
     }
     .eyebrow::before { content: ""; width: 30px; height: 1px; background: currentColor; opacity: .7; }
     .hero h1 {
-      max-width: 760px;
+      max-width: 930px;
       margin: 0;
-      font-size: clamp(54px, 5.8vw, 90px);
+      font-size: clamp(52px, 5.1vw, 79px);
       font-weight: 500;
       letter-spacing: -.068em;
       line-height: .89;
     }
     .hero-copy {
-      max-width: 590px;
+      max-width: 670px;
       margin: 21px 0 0;
       color: rgba(255, 255, 255, .74);
       font-size: clamp(14px, 1.15vw, 17px);
@@ -228,34 +228,12 @@
       padding: 0 18px;
       border-radius: 999px;
       color: var(--ink);
-      background: var(--lime);
+      background: var(--magenta);
       font-size: 11px;
       font-weight: 700;
       transition: transform .2s ease, box-shadow .2s ease;
     }
-    .pill-button:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(223, 255, 69, .22); }
-    .text-link { padding-bottom: 4px; border-bottom: 1px solid rgba(255, 255, 255, .56); font-size: 11px; }
-
-    .hero-proof {
-      min-height: 224px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 17px;
-      border-radius: 13px;
-      color: var(--ink);
-      background: rgba(255, 255, 255, .94);
-      box-shadow: 0 20px 52px rgba(0, 0, 0, .22);
-    }
-    .proof-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 10px; }
-    .proof-top span { color: var(--muted); }
-    .proof-top em { padding: 5px 8px; border-radius: 999px; color: #456100; background: var(--lime-soft); font-style: normal; font-weight: 700; }
-    .mini-chart { height: 76px; display: flex; align-items: end; gap: 7px; padding: 10px 0 0; border-bottom: 1px solid var(--line); }
-    .mini-chart i { flex: 1; height: var(--bar); border-radius: 3px 3px 0 0; background: var(--olive); opacity: .9; transform-origin: bottom; }
-    .mini-chart i:nth-child(2), .mini-chart i:nth-child(5) { background: #7b9a30; }
-    .mini-chart i:nth-child(4) { background: var(--lime); }
-    .proof-bottom strong { display: block; margin-top: 10px; font-size: 31px; line-height: .95; letter-spacing: -.055em; font-weight: 600; }
-    .proof-bottom span { display: block; margin-top: 6px; color: var(--muted); font-size: 10px; line-height: 1.35; }
+    .pill-button:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(231, 144, 255, .28); }
 
     .brand-rail {
       position: relative;
@@ -282,10 +260,14 @@
       animation: marquee 26s linear infinite;
       will-change: transform;
     }
-    .brand-group { display: flex; align-items: center; gap: clamp(48px, 6vw, 92px); padding-right: clamp(48px, 6vw, 92px); }
-    .brand-item { min-width: 118px; display: flex; align-items: center; justify-content: center; gap: 8px; color: #293319; font-size: 15px; font-weight: 700; white-space: nowrap; }
-    .brand-item img { width: auto; height: auto; max-width: 116px; max-height: 25px; object-fit: contain; filter: brightness(0) saturate(100%); opacity: .78; }
-    .brand-item.small { min-width: 88px; font-size: 12px; }
+    .brand-group { display: flex; align-items: center; gap: clamp(50px, 6vw, 90px); padding-right: clamp(50px, 6vw, 90px); }
+    .brand-item { min-width: 118px; height: 42px; display: flex; align-items: center; justify-content: center; }
+    .brand-item img { width: auto; height: auto; max-width: 136px; max-height: 36px; object-fit: contain; filter: brightness(0) saturate(100%); opacity: .82; }
+    .brand-item .logo-pyxi { max-width: 37px; max-height: 37px; }
+    .brand-item .logo-filmpulse { max-width: 108px; }
+    .brand-item .logo-york { max-width: 112px; max-height: 40px; }
+    .brand-item .logo-matchpoint { max-width: 69px; max-height: 40px; }
+    .brand-item .logo-culture { max-width: 154px; max-height: 38px; }
     @keyframes marquee { to { transform: translateX(-50%); } }
 
     .section { padding: clamp(76px, 9vw, 142px) clamp(28px, 5vw, 82px); }
@@ -322,13 +304,13 @@
       border-radius: 15px;
     }
     .service-card.aqua { min-height: 360px; background: var(--aqua); }
-    .service-card.dark { color: white; background: var(--olive-deep); }
+    .service-card.dark { color: white; background: var(--plum-deep); }
     .service-card .card-no { font-size: 10px; opacity: .58; }
     .service-card h3 { max-width: 340px; margin: 0; font-size: clamp(31px, 2.8vw, 45px); line-height: .94; letter-spacing: -.06em; font-weight: 500; }
     .service-card ul { margin: 18px 0 0; padding: 0; list-style: none; }
     .service-card li { display: flex; gap: 8px; margin-top: 6px; font-size: 10px; line-height: 1.35; opacity: .7; }
     .service-card li::before { content: "→"; flex: 0 0 auto; }
-    .service-card .card-pill { width: max-content; min-height: 34px; display: inline-flex; align-items: center; margin-top: 18px; padding: 0 13px; border-radius: 999px; color: var(--ink); background: var(--lime); font-size: 10px; font-weight: 700; }
+    .service-card .card-pill { width: max-content; min-height: 34px; display: inline-flex; align-items: center; margin-top: 18px; padding: 0 13px; border-radius: 999px; color: var(--ink); background: var(--magenta); font-size: 10px; font-weight: 700; }
 
     .work { background: var(--cream); }
     .section-head {
@@ -351,7 +333,7 @@
       border: 0;
       border-radius: 15px;
       color: white;
-      background: var(--olive);
+      background: var(--plum);
       text-align: left;
       cursor: pointer;
     }
@@ -376,59 +358,35 @@
     .work-copy { position: relative; z-index: 2; width: 100%; padding: 24px; }
     .work-copy small { color: rgba(255, 255, 255, .68); font-size: 9px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
     .work-copy h3 { max-width: 360px; margin: 9px 48px 0 0; font-size: clamp(27px, 2.8vw, 43px); line-height: .96; letter-spacing: -.052em; font-weight: 500; }
-    .open-mark { position: absolute; right: 22px; bottom: 22px; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; color: var(--ink); background: var(--lime); font-size: 17px; }
+    .open-mark { position: absolute; right: 22px; bottom: 22px; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; color: var(--ink); background: var(--magenta); font-size: 17px; }
 
-    .calculator { background: var(--paper); }
-    .calculator-layout {
-      display: grid;
-      grid-template-columns: minmax(300px, .86fr) minmax(420px, 1.14fr);
-      gap: clamp(52px, 9vw, 150px);
-      align-items: center;
-    }
-    .calculator-copy h2 { max-width: 650px; }
-    .calculator-copy .section-intro { max-width: 500px; margin: 25px 0 0; }
+    .experience { background: var(--paper); }
+    .experience .section-head h2 { max-width: 780px; }
     .plain-link { display: inline-flex; margin-top: 21px; padding-bottom: 5px; border-bottom: 1px solid var(--ink); font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
-    .calculator-panel {
-      min-height: 470px;
+    .experience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .experience-card {
+      min-height: 390px;
       display: flex;
       flex-direction: column;
-      padding: clamp(26px, 4vw, 48px);
+      padding: clamp(25px, 3vw, 38px);
       border-radius: 15px;
-      background: var(--lime);
-      box-shadow: 0 25px 64px rgba(83, 105, 22, .14);
+      background: var(--aqua);
     }
-    .panel-top { display: flex; justify-content: space-between; gap: 16px; padding-bottom: 17px; border-bottom: 1px solid rgba(24, 33, 9, .22); font-size: 10px; }
-    .panel-top span:last-child { color: #53602b; }
-    .focus-kicker { margin-top: 32px; color: #59682d; font-size: 10px; text-transform: uppercase; letter-spacing: .06em; }
-    .focus-value { min-height: 1em; margin: 5px 0 28px; font-size: clamp(49px, 5vw, 78px); line-height: .9; letter-spacing: -.066em; font-weight: 600; }
-    .range-wrap { position: relative; padding: 3px 0; }
-    input[type="range"] {
-      width: 100%;
-      height: 4px;
-      margin: 0;
-      appearance: none;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--ink) var(--range, 50%), rgba(24, 33, 9, .22) var(--range, 50%));
-      cursor: grab;
-    }
-    input[type="range"]:active { cursor: grabbing; }
-    input[type="range"]::-webkit-slider-thumb { width: 17px; height: 17px; appearance: none; border: 0; border-radius: 3px; background: var(--ink); }
-    input[type="range"]::-moz-range-thumb { width: 17px; height: 17px; border: 0; border-radius: 3px; background: var(--ink); }
-    .range-labels { display: flex; justify-content: space-between; gap: 12px; margin-top: 10px; color: #52612a; font-size: 9px; }
-    .panel-readout { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; margin-top: auto; padding-top: 25px; border-top: 1px solid rgba(24, 33, 9, .22); }
-    .focus-proof { max-width: 390px; margin: 0; font-size: 12px; line-height: 1.46; }
-    .metric-readout { text-align: right; }
-    .metric-readout strong { display: block; font-size: clamp(31px, 4vw, 52px); line-height: .9; letter-spacing: -.055em; }
-    .metric-readout span { display: block; max-width: 118px; margin-top: 7px; color: #53602b; font-size: 9px; line-height: 1.35; text-transform: uppercase; }
-    .stat-strip { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 15px; overflow: hidden; border: 1px solid var(--line); border-radius: 15px; }
-    .stat { min-height: 145px; padding: 23px; border-right: 1px solid var(--line); background: var(--cream); }
-    .stat:last-child { border-right: 0; }
-    .stat strong { display: block; font-size: clamp(31px, 3.5vw, 52px); letter-spacing: -.058em; line-height: .95; font-weight: 500; }
-    .stat span { display: block; max-width: 160px; margin-top: 10px; color: var(--muted); font-size: 9px; line-height: 1.38; letter-spacing: .05em; text-transform: uppercase; }
+    .experience-card:nth-child(2) { background: var(--magenta); }
+    .experience-card:nth-child(3) { color: white; background: var(--plum-deep); }
+    .experience-card small { font-size: 9px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; opacity: .58; }
+    .experience-card h3 { margin: 28px 0 0; font-size: clamp(37px, 3.4vw, 54px); line-height: .92; letter-spacing: -.06em; font-weight: 500; }
+    .experience-card p { margin: 16px 0 0; font-size: 12px; line-height: 1.52; opacity: .68; }
+    .experience-result { margin-top: auto; padding-top: 25px; border-top: 1px solid currentColor; border-color: color-mix(in srgb, currentColor 20%, transparent); }
+    .experience-result strong { display: block; font-size: clamp(38px, 4vw, 58px); line-height: .86; letter-spacing: -.06em; font-weight: 600; }
+    .experience-result span { display: block; max-width: 190px; margin-top: 9px; font-size: 9px; line-height: 1.4; letter-spacing: .05em; text-transform: uppercase; opacity: .62; }
+    .york-proof { display: flex; align-items: center; justify-content: space-between; gap: 30px; margin-top: 14px; padding: 23px 25px; border: 1px solid var(--line); border-radius: 15px; background: var(--cream); }
+    .york-proof span { color: var(--muted); font-size: 10px; line-height: 1.45; text-transform: uppercase; letter-spacing: .06em; }
+    .york-proof strong { font-size: clamp(25px, 3vw, 42px); line-height: .9; letter-spacing: -.05em; font-weight: 500; }
 
-    .faq { color: white; background: var(--olive-deep); }
+    .faq { color: white; background: var(--plum-deep); }
     .faq-layout { display: grid; grid-template-columns: .75fr 1.25fr; gap: clamp(48px, 9vw, 145px); }
-    .faq h2 { color: var(--lime); }
+    .faq h2 { color: var(--magenta); }
     .faq .section-label, .faq .section-intro { color: rgba(255, 255, 255, .58); }
     .faq-copy .section-intro { max-width: 410px; margin: 23px 0 0; }
     .faq-list { border-top: 1px solid rgba(255, 255, 255, .2); }
@@ -444,7 +402,7 @@
       font-size: 13px;
     }
     summary::-webkit-details-marker { display: none; }
-    summary::after { content: "+"; color: var(--lime); font-size: 21px; font-weight: 300; transition: transform .2s ease; }
+    summary::after { content: "+"; color: var(--magenta); font-size: 21px; font-weight: 300; transition: transform .2s ease; }
     details[open] summary::after { transform: rotate(45deg); }
     details p { max-width: 650px; margin: -2px 42px 22px 0; color: rgba(255, 255, 255, .62); font-size: 12px; line-height: 1.52; }
 
@@ -455,7 +413,7 @@
       align-items: flex-end;
       overflow: hidden;
       color: white;
-      background: #17200f center / cover no-repeat url("./assets/cinema-poster.webp");
+      background: #241328 center / cover no-repeat url("./assets/cinema-poster.webp");
     }
     .cinema video {
       position: absolute;
@@ -467,60 +425,32 @@
       transition: opacity .45s ease;
     }
     .cinema.video-ready video { opacity: 1; }
-    .cinema::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(8, 14, 4, .85), rgba(8, 14, 4, .04) 68%); }
+    .cinema::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(27, 10, 31, .9), rgba(36, 19, 40, .06) 68%); }
     .cinema-copy { position: relative; z-index: 2; max-width: 910px; padding: clamp(38px, 6vw, 92px); }
-    .cinema-copy p { margin: 0 0 14px; color: var(--lime); font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+    .cinema-logos { display: flex; align-items: center; gap: 24px; margin-bottom: 26px; }
+    .cinema-logos img { width: auto; height: auto; max-height: 46px; object-fit: contain; }
+    .cinema-logos .filmpulse { max-width: 142px; }
+    .cinema-logos .york { max-width: 126px; }
+    .cinema-copy p { margin: 0 0 14px; color: var(--magenta); font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
     .cinema-copy h2 { margin: 0; font-size: clamp(50px, 6.5vw, 100px); line-height: .89; letter-spacing: -.067em; font-weight: 500; }
     .cinema-copy span { display: block; max-width: 520px; margin-top: 20px; color: rgba(255, 255, 255, .64); font-size: 13px; line-height: 1.5; }
 
     .study { background: var(--paper); }
     .article-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-    .article-card { overflow: hidden; border-radius: 15px; background: var(--olive-deep); color: white; }
+    .article-card { overflow: hidden; border-radius: 15px; background: var(--plum-deep); color: white; }
     .article-card a, .article-card button { width: 100%; display: block; padding: 0; border: 0; color: inherit; background: transparent; text-align: left; cursor: pointer; }
     .article-media { position: relative; overflow: hidden; aspect-ratio: 1.2 / 1; background: #e7e7df; }
-    .article-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .55s var(--ease); }
-    .article-card:hover img { transform: scale(1.03); }
+    .article-media img, .article-media video { width: 100%; height: 100%; object-fit: cover; transition: transform .55s var(--ease); }
+    .article-media video { background: #120915; pointer-events: none; }
+    .article-card:hover .article-media > img, .article-card:hover .article-media > video { transform: scale(1.03); }
     .article-card.pdf .article-media { background: white; }
     .article-card.pdf img { object-fit: contain; padding: 24px; }
-    .matchpoint-graphic {
+    .matchpoint-media {
       display: grid;
       place-items: center;
-      isolation: isolate;
-      overflow: hidden;
-      background:
-        linear-gradient(90deg, transparent 49.7%, rgba(223, 255, 69, .55) 50%, transparent 50.3%),
-        radial-gradient(circle at center, transparent 0 18%, rgba(223, 255, 69, .45) 18.3% 18.8%, transparent 19.1%),
-        linear-gradient(135deg, #273d0d, #101b05);
+      background: radial-gradient(circle at 50% 45%, #6d3c78 0%, #32183a 52%, #1d0e21 100%);
     }
-    .matchpoint-graphic::before {
-      content: "";
-      position: absolute;
-      inset: 11%;
-      z-index: -1;
-      border: 1px solid rgba(223, 255, 69, .48);
-      border-radius: 80px;
-      transform: rotate(-8deg) scale(1.05);
-    }
-    .matchpoint-word {
-      font-size: clamp(38px, 4.2vw, 66px);
-      font-weight: 800;
-      letter-spacing: -.07em;
-      line-height: .8;
-      text-align: center;
-      text-transform: lowercase;
-      color: white;
-    }
-    .matchpoint-word span { display: block; color: var(--lime); }
-    .matchpoint-ball {
-      position: absolute;
-      right: 13%;
-      top: 15%;
-      width: 42px;
-      aspect-ratio: 1;
-      border-radius: 50%;
-      background: var(--lime);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, .28);
-    }
+    .matchpoint-media img { width: min(52%, 160px); height: auto; object-fit: contain; filter: drop-shadow(0 14px 24px rgba(0, 0, 0, .22)); }
     .article-copy { display: block; min-height: 154px; padding: 22px; }
     .article-copy small { color: rgba(255, 255, 255, .55); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
     .article-copy h3 { margin: 10px 0 0; font-size: clamp(23px, 2.4vw, 35px); line-height: .98; letter-spacing: -.048em; font-weight: 500; }
@@ -528,14 +458,16 @@
 
     .contact {
       padding: clamp(92px, 12vw, 180px) 28px 18px;
-      background: linear-gradient(180deg, var(--paper) 0%, #f5ffd3 58%, var(--lime) 100%);
+      background: linear-gradient(180deg, var(--paper) 0%, #f5e5fb 56%, var(--magenta) 100%);
     }
     .contact-inner { max-width: 720px; margin: 0 auto clamp(85px, 12vw, 160px); text-align: center; }
     .contact-inner h2 { margin: 0; font-size: clamp(48px, 6vw, 90px); line-height: .9; letter-spacing: -.067em; font-weight: 600; }
-    .contact-inner p { max-width: 540px; margin: 22px auto; color: #5d6750; font-size: 13px; line-height: 1.5; }
+    .contact-inner p { max-width: 540px; margin: 22px auto; color: #735776; font-size: 13px; line-height: 1.5; }
     .contact-actions { display: flex; justify-content: center; align-items: center; gap: 9px; flex-wrap: wrap; }
-    .contact-actions a { min-height: 43px; display: inline-flex; align-items: center; padding: 0 17px; border: 1px solid rgba(24, 33, 9, .18); border-radius: 999px; background: rgba(255, 255, 255, .5); font-size: 10px; font-weight: 700; }
-    .contact-actions .dark { color: white; background: var(--ink); }
+    .contact-actions a { width: 52px; height: 52px; display: inline-flex; align-items: center; justify-content: center; padding: 0; border: 1px solid rgba(42, 21, 48, .18); border-radius: 50%; background: rgba(255, 255, 255, .52); transition: transform .2s ease, color .2s ease, background .2s ease; }
+    .contact-actions a:hover { color: white; background: var(--ink); transform: translateY(-2px); }
+    .contact-actions svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
     .footer-panel {
       min-height: 300px;
       display: grid;
@@ -544,10 +476,10 @@
       padding: clamp(30px, 4vw, 52px);
       border-radius: 15px;
       color: white;
-      background: var(--olive-deep);
+      background: var(--plum-deep);
     }
     .footer-brand { font-size: 23px; font-weight: 800; letter-spacing: -.05em; }
-    .footer-brand::before { content: "✦"; margin-right: 8px; color: var(--lime); }
+    .footer-brand::before { content: "✦"; margin-right: 8px; color: var(--magenta); }
     .footer-note { max-width: 420px; margin: 20px 0 0; color: rgba(255, 255, 255, .5); font-size: 12px; line-height: 1.5; }
     .footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; align-content: start; }
     .footer-links small { display: block; margin-bottom: 13px; color: rgba(255, 255, 255, .42); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
@@ -562,38 +494,40 @@
       border: 1px solid rgba(255, 255, 255, .16);
       border-radius: 18px;
       color: white;
-      background: #11180b;
+      background: #1f1024;
       box-shadow: 0 32px 120px rgba(0, 0, 0, .6);
     }
-    dialog::backdrop { background: rgba(8, 13, 5, .82); }
-    .dialog-bar { position: sticky; z-index: 2; top: 0; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 14px 16px; background: rgba(17, 24, 11, .96); }
+    dialog::backdrop { background: rgba(20, 8, 23, .86); }
+    .dialog-bar { position: sticky; z-index: 2; top: 0; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 14px 16px; background: rgba(31, 16, 36, .96); }
     .dialog-title { font-size: 12px; }
     .dialog-close { min-width: 76px; min-height: 38px; border: 1px solid rgba(255, 255, 255, .24); border-radius: 999px; color: white; background: transparent; cursor: pointer; }
-    .dialog-media { display: grid; place-items: center; min-height: 300px; background: #070a05; }
+    .dialog-media { display: grid; place-items: center; min-height: 300px; background: #0e0710; }
     .dialog-media img, .dialog-media video { width: 100%; max-height: 78vh; object-fit: contain; }
     .dialog-caption { margin: 0; padding: 18px; color: rgba(255, 255, 255, .66); font-size: 12px; line-height: 1.5; }
 
-    .js .nav, .js .hero-copy-block, .js .hero-proof { opacity: 0; transform: translateY(16px); }
+    .js .nav, .js .hero-copy-block { opacity: 0; transform: translateY(16px); }
     .js .hero picture { opacity: .76; transform: scale(1.025); }
-    .js.is-ready .nav, .js.is-ready .hero-copy-block, .js.is-ready .hero-proof, .js.is-ready .hero picture {
+    .js.is-ready .nav, .js.is-ready .hero-copy-block, .js.is-ready .hero picture {
       opacity: 1;
       transform: none;
       transition: opacity .72s var(--ease), transform .9s var(--ease);
     }
     .js.is-ready .nav { transition-delay: .04s; }
     .js.is-ready .hero-copy-block { transition-delay: .12s; }
-    .js.is-ready .hero-proof { transition-delay: .24s; }
+
     .js [data-reveal] { opacity: 0; transform: translateY(30px); }
     .js [data-reveal].is-visible { opacity: 1; transform: none; transition: opacity .62s var(--ease) var(--delay, 0ms), transform .76s var(--ease) var(--delay, 0ms); }
 
     @media (max-width: 1040px) {
-      .overview-layout, .calculator-layout, .faq-layout { grid-template-columns: 1fr; }
-      .overview-copy h2, .calculator-copy h2 { max-width: 800px; }
+      .overview-layout, .faq-layout { grid-template-columns: 1fr; }
+      .overview-copy h2 { max-width: 800px; }
       .overview-cards { margin-top: 6px; }
       .section-head { grid-template-columns: 1fr; gap: 20px; align-items: start; }
       .section-head .section-intro { max-width: 620px; }
       .work-grid { grid-template-columns: 1fr 1fr; }
       .work-card:last-child { grid-column: 1 / -1; min-height: 390px; }
+      .experience-grid { grid-template-columns: 1fr 1fr; }
+      .experience-card:last-child { grid-column: 1 / -1; }
       .article-grid { grid-template-columns: 1fr 1fr; }
       .article-card:last-child { grid-column: 1 / -1; }
       .footer-panel { grid-template-columns: 1fr; }
@@ -610,30 +544,23 @@
       .nav-actions a { min-height: 38px; }
       .hero { min-height: 780px; }
       .hero picture img { object-position: 57% center; }
-      .hero picture::after { background: linear-gradient(0deg, rgba(9, 14, 7, .94) 0%, rgba(9, 14, 7, .2) 76%); }
-      .hero-content { grid-template-columns: 1fr; gap: 28px; padding: 112px 20px 28px; }
-      .hero h1 { font-size: clamp(50px, 15vw, 70px); line-height: .9; }
+      .hero picture::after { background: linear-gradient(0deg, rgba(31, 12, 36, .95) 0%, rgba(44, 17, 51, .2) 76%); }
+      .hero-content { grid-template-columns: 1fr; gap: 0; padding: 112px 20px 38px; }
+      .hero h1 { font-size: clamp(47px, 13.5vw, 64px); line-height: .9; }
       .hero-copy { font-size: 14px; }
       .hero-actions { flex-wrap: wrap; }
-      .hero-proof { width: 100%; min-height: 154px; }
-      .mini-chart { height: 45px; }
-      .proof-bottom strong { font-size: 25px; }
+
       .brand-track { padding: 21px 0; animation-duration: 22s; }
       .brand-group { gap: 40px; padding-right: 40px; }
-      .brand-item { min-width: 96px; font-size: 13px; }
+      .brand-item { min-width: 104px; }
       .section { padding: 76px 20px; }
       .section h2 { font-size: clamp(45px, 13.2vw, 62px); line-height: .92; }
-      .overview-layout, .calculator-layout { gap: 38px; }
-      .overview-cards, .work-grid, .article-grid { grid-template-columns: 1fr; }
+      .overview-layout { gap: 38px; }
+      .overview-cards, .work-grid, .experience-grid, .article-grid { grid-template-columns: 1fr; }
       .service-card, .service-card.aqua { min-height: 330px; }
       .work-card, .work-card:last-child { grid-column: auto; min-height: 500px; }
-      .calculator-panel { min-height: 480px; padding: 27px 21px; }
-      .panel-readout { grid-template-columns: 1fr; }
-      .metric-readout { text-align: left; }
-      .stat-strip { grid-template-columns: 1fr 1fr; }
-      .stat { border-bottom: 1px solid var(--line); }
-      .stat:nth-child(2) { border-right: 0; }
-      .stat:nth-last-child(-n+2) { border-bottom: 0; }
+      .experience-card, .experience-card:last-child { grid-column: auto; min-height: 350px; }
+      .york-proof { align-items: flex-start; flex-direction: column; gap: 10px; }
       .faq-layout { gap: 38px; }
       .cinema { min-height: 720px; }
       .cinema video { object-position: 55% center; }
@@ -649,7 +576,7 @@
     @media (prefers-reduced-motion: reduce) {
       html, .portfolio-window { scroll-behavior: auto; }
       .brand-track { animation: none; }
-      .js .nav, .js .hero-copy-block, .js .hero-proof, .js .hero picture, .js [data-reveal] { opacity: 1; transform: none; transition: none; }
+      .js .nav, .js .hero-copy-block, .js .hero picture, .js [data-reveal] { opacity: 1; transform: none; transition: none; }
       .work-card img, .article-card img, .cinema video { transition: none; }
     }
   </style>
@@ -661,7 +588,7 @@
   <div class="stage">
     <main class="portfolio-window" id="portfolio-window">
       <nav class="nav" aria-label="Primary navigation">
-        <div class="nav-pills"><a href="#profile">Profile</a><a href="#work">Selected work</a><a href="#study">Study</a></div>
+        <div class="nav-pills"><a href="#top">Home</a><a href="#work">Work</a><a href="#study">Study</a></div>
         <a class="brand" href="#top" aria-label="Back to top">Stavros.</a>
         <div class="nav-actions"><a href="../assets/stavros-mavrommatis-cv.pdf" target="_blank" rel="noopener">CV</a><a class="primary" href="mailto:mail@stavrosmavrommatis.com">Contact</a></div>
       </nav>
@@ -673,36 +600,29 @@
         </picture>
         <div class="hero-content">
           <div class="hero-copy-block">
-            <p class="eyebrow">Product · marketing · events</p>
-            <h1>Build work people can join.</h1>
-            <p class="hero-copy">I’m Stavros Mavrommatis. I turn ideas into clear offers, campaign systems and live experiences, then carry the detail through to delivery.</p>
-            <div class="hero-actions"><a class="pill-button" href="#work">Explore the work <span aria-hidden="true">→</span></a><a class="text-link" href="#profile">Learn more</a></div>
+            <p class="eyebrow">Product · marketing · cultural events</p>
+            <h1>I’m Stavros Mavrommatis, based in London.</h1>
+            <p class="hero-copy">I work across product, marketing and cultural events. At Pyxi, I helped run a paid cultural events product, covering event research, campaign creative, CRM and email, partner assets, app testing and guest operations. I use Canva for campaign assets, cut short video, and use AI-assisted visuals where they fit the campaign.</p>
+            <div class="hero-actions"><a class="pill-button" href="#work">Explore the work <span aria-hidden="true">→</span></a></div>
           </div>
-          <aside class="hero-proof" aria-label="Selected delivery result">
-            <div class="proof-top"><span>Delivery</span><em>Live</em></div>
-            <div class="mini-chart" aria-hidden="true"><i style="--bar:31%"></i><i style="--bar:48%"></i><i style="--bar:42%"></i><i style="--bar:72%"></i><i style="--bar:61%"></i><i style="--bar:88%"></i></div>
-            <div class="proof-bottom"><strong>15+ events</strong><span>From offer and campaign to the people in the room.</span></div>
-          </aside>
         </div>
       </section>
 
       <div class="brand-rail" aria-label="Selected organisations and projects">
         <div class="brand-track" aria-hidden="true">
           <div class="brand-group">
-            <span class="brand-item"><img src="../assets/logo-pyxi.png" alt="" width="116" height="25"></span>
-            <span class="brand-item"><img src="../assets/logo-filmpulse.png" alt="" width="116" height="25"></span>
-            <span class="brand-item">University of York</span>
-            <span class="brand-item"><img src="../assets/logo-matchpoint-tight.png" alt="" width="116" height="25"></span>
-            <span class="brand-item small">Culture Edit</span>
-            <span class="brand-item small">FilmPulse</span>
+            <span class="brand-item"><img class="logo-pyxi" src="../assets/logo-pyxi.png" alt="" width="314" height="378"></span>
+            <span class="brand-item"><img class="logo-filmpulse" src="../assets/logo-filmpulse.png" alt="" width="640" height="240"></span>
+            <span class="brand-item"><img class="logo-york" src="./assets/logo-university-of-york.svg" alt="" width="400" height="156"></span>
+            <span class="brand-item"><img class="logo-matchpoint" src="../assets/logo-matchpoint-tight.png" alt="" width="240" height="170"></span>
+            <span class="brand-item"><img class="logo-culture" src="./assets/logo-culture-edit.png" alt="" width="1043" height="248"></span>
           </div>
           <div class="brand-group">
-            <span class="brand-item"><img src="../assets/logo-pyxi.png" alt="" width="116" height="25"></span>
-            <span class="brand-item"><img src="../assets/logo-filmpulse.png" alt="" width="116" height="25"></span>
-            <span class="brand-item">University of York</span>
-            <span class="brand-item"><img src="../assets/logo-matchpoint-tight.png" alt="" width="116" height="25"></span>
-            <span class="brand-item small">Culture Edit</span>
-            <span class="brand-item small">FilmPulse</span>
+            <span class="brand-item"><img class="logo-pyxi" src="../assets/logo-pyxi.png" alt="" width="314" height="378"></span>
+            <span class="brand-item"><img class="logo-filmpulse" src="../assets/logo-filmpulse.png" alt="" width="640" height="240"></span>
+            <span class="brand-item"><img class="logo-york" src="./assets/logo-university-of-york.svg" alt="" width="400" height="156"></span>
+            <span class="brand-item"><img class="logo-matchpoint" src="../assets/logo-matchpoint-tight.png" alt="" width="240" height="170"></span>
+            <span class="brand-item"><img class="logo-culture" src="./assets/logo-culture-edit.png" alt="" width="1043" height="248"></span>
           </div>
         </div>
       </div>
@@ -710,11 +630,11 @@
       <section class="section overview" id="profile">
         <div class="overview-layout">
           <div class="overview-copy" data-reveal>
-            <p class="section-label">Profile / 01</p>
-            <h2>Work across the whole experience.</h2>
+            <p class="section-label">Overview / 01</p>
+            <h2>Recent work spans paid events, campaign creative and short video.</h2>
             <div class="body-copy">
-              <p><strong>Product, message and delivery belong together.</strong> Recent work at Pyxi covered paid cultural-event concepts, app testing, campaign creative, CRM, partner assets, guest operations and reporting.</p>
-              <p>The useful bit is not just making the campaign look good. It is making the offer understandable, getting it in front of people and making the real experience hold up.</p>
+              <p><strong>Most of my experience has been at Pyxi and the University of York.</strong> At Pyxi I helped run a paid cultural events product from concept through campaign creative, guest operations and reporting.</p>
+              <p>At York my main projects were the FilmPulse / Kaleidoscope Film Festival and a final-year dissertation on VFX, AI and labour.</p>
             </div>
           </div>
           <div class="overview-cards">
@@ -732,7 +652,7 @@
 
       <section class="section work" id="work">
         <div class="section-head" data-reveal>
-          <div><p class="section-label">Selected work / 02</p><h2>Proof from work that shipped.</h2></div>
+          <div><p class="section-label">Work / 02</p><h2>Proof from work that shipped.</h2></div>
           <p class="section-intro">Campaign systems, CRM and short-form creative made for real offers and audiences. Open a card to inspect the original asset.</p>
         </div>
         <div class="work-grid">
@@ -751,49 +671,34 @@
         </div>
       </section>
 
-      <section class="section calculator">
-        <div class="calculator-layout">
-          <div class="calculator-copy" data-reveal>
-            <p class="section-label">Experience lens / 03</p>
-            <h2>One profile. Three useful angles.</h2>
-            <p class="section-intro">Move the slider to shift the emphasis between product, marketing and events. The evidence stays real; only the lens changes.</p>
-            <a class="plain-link" href="https://www.linkedin.com/in/stavros-mavrommatis-54248920a" target="_blank" rel="noopener">View LinkedIn ↗</a>
-          </div>
-          <div class="calculator-panel" data-reveal style="--delay:90ms">
-            <div class="panel-top"><span>Experience calculator</span><span>Drag to explore</span></div>
-            <div class="focus-kicker">Current lens</div>
-            <div class="focus-value" id="focus-value" aria-live="polite">Marketing</div>
-            <div class="range-wrap"><input id="focus-range" type="range" min="0" max="100" value="50" aria-label="Choose product, marketing or events focus"></div>
-            <div class="range-labels"><span>Product</span><span>Marketing</span><span>Events</span></div>
-            <div class="panel-readout">
-              <p class="focus-proof" id="focus-proof">Campaign concepts, Canva assets, CRM and email, partner listings, short video and AI-assisted visual production.</p>
-              <div class="metric-readout"><strong id="focus-metric">£1k+</strong><span id="focus-metric-label">revenue from first paid events</span></div>
-            </div>
-          </div>
+      <section class="section experience">
+        <div class="section-head" data-reveal>
+          <div><p class="section-label">Experience / 03</p><h2>Three disciplines, one connected practice.</h2></div>
+          <div><p class="section-intro">The work moves between shaping the offer, reaching the audience and delivering the experience.</p><a class="plain-link" href="https://www.linkedin.com/in/stavros-mavrommatis-54248920a" target="_blank" rel="noopener">View LinkedIn ↗</a></div>
         </div>
-        <div class="stat-strip" data-reveal>
-          <div class="stat"><strong>15+</strong><span>Pyxi cultural events delivered</span></div>
-          <div class="stat"><strong>70</strong><span>Paid tickets in the first two months</span></div>
-          <div class="stat"><strong>£1k+</strong><span>Revenue from the first paid events</span></div>
-          <div class="stat"><strong>50+</strong><span>Attendees at the York screening</span></div>
+        <div class="experience-grid">
+          <article class="experience-card" data-reveal><small>01 / Product</small><h3>Shape the offer.</h3><p>Paid cultural-event concepts, app testing, user feedback, reporting and operational iteration.</p><div class="experience-result"><strong>70</strong><span>Paid tickets in the first two months</span></div></article>
+          <article class="experience-card" data-reveal style="--delay:70ms"><small>02 / Marketing</small><h3>Reach the audience.</h3><p>Campaign concepts, Canva assets, CRM and email, partner listings, short video and AI-assisted visual production.</p><div class="experience-result"><strong>£1k+</strong><span>Revenue from the first paid events</span></div></article>
+          <article class="experience-card" data-reveal style="--delay:140ms"><small>03 / Events</small><h3>Deliver the room.</h3><p>Venue communication, guest flows, partner coordination and on-the-day delivery across the cultural programme.</p><div class="experience-result"><strong>15+</strong><span>Pyxi cultural events delivered</span></div></article>
         </div>
+        <div class="york-proof" data-reveal><span>FilmPulse / Kaleidoscope Film Festival · University of York</span><strong>50+ attendees</strong></div>
       </section>
 
       <section class="section faq">
         <div class="faq-layout">
-          <div class="faq-copy" data-reveal><p class="section-label">Quick facts / 04</p><h2>Frequently asked questions.</h2><p class="section-intro">The concise version of role fit, tools, location and availability.</p></div>
+          <div class="faq-copy" data-reveal><p class="section-label">About the work / 04</p><h2>How the work comes together.</h2><p class="section-intro">Product, marketing and cultural events — across concept, creative, operations and everything that makes a project land.</p></div>
           <div class="faq-list" data-reveal style="--delay:80ms">
-            <details open><summary>What roles are you looking for?</summary><p>Product, marketing, events and CRM roles where I can combine organisation, creative production and practical delivery.</p></details>
-            <details><summary>Which tools do you use?</summary><p>Canva, Adobe creative tools, DaVinci Resolve, CRM and email platforms, spreadsheets, AI-assisted creative workflows and modern product collaboration tools.</p></details>
-            <details><summary>Where are you based?</summary><p>London, UK. I’m open to London-based and hybrid work, with flexibility for the right role.</p></details>
-            <details><summary>Can I see the full CV?</summary><p>Yes. The CV link in the header opens the current PDF, and the contact button starts an email directly.</p></details>
+            <details open><summary>What’s the scope?</summary><p>End to end, across product, marketing and live events. At Pyxi that covered event concepts, app testing, campaign creative, CRM, partner assets, guest operations and reporting across 15+ events.</p></details>
+            <details><summary>How does a project move?</summary><p>I start with what success looks like and work backwards, so the creative, operations and communications hold together rather than pulling in different directions.</p></details>
+            <details><summary>Which tools support the work?</summary><p>Adobe creative tools, Canva and DaVinci Resolve for creative work; CRM and email platforms for campaigns; AI-assisted workflows where they add real speed. Spreadsheets hold the detail together.</p></details>
+            <details><summary>What has shipped?</summary><p>At Pyxi: 70 paid tickets in the first two months and £1,000+ in first-event revenue. At York: a 50+ attendee FilmPulse screening with Screen Yorkshire and a dissertation on VFX, AI and labour.</p></details>
           </div>
         </div>
       </section>
 
       <section class="cinema" aria-label="FilmPulse behind-the-scenes video">
         <video data-src="../assets/filmpulse-kaleidoscope-behind-scenes.mp4" poster="./assets/cinema-poster.webp" muted loop playsinline preload="none" aria-label="Behind the scenes at the Kaleidoscope Film Festival"></video>
-        <div class="cinema-copy" data-reveal><p>FilmPulse / Kaleidoscope Film Festival</p><h2>Creative work gets better when it reaches a real audience.</h2><span>Behind the scenes from a student-run festival built around programming, production and the room itself.</span></div>
+        <div class="cinema-copy" data-reveal><div class="cinema-logos" aria-label="FilmPulse and University of York"><img class="filmpulse" src="../assets/logo-filmpulse.png" alt="FilmPulse" width="640" height="240"><img class="york" src="./assets/logo-university-of-york.svg" alt="University of York" width="400" height="156"></div><p>FilmPulse / Kaleidoscope Film Festival</p><h2>Creative work gets better when it reaches a real audience.</h2><span>Behind the scenes from a student-run festival built around programming, production and the room itself.</span></div>
       </section>
 
       <section class="section study" id="study">
@@ -803,16 +708,16 @@
         </div>
         <div class="article-grid">
           <article class="article-card pdf" data-reveal><a href="../assets/vfx-ai-dissertation-showcase.pdf" target="_blank" rel="noopener"><div class="article-media"><img src="./assets/study-dissertation.webp" alt="First page preview of the VFX and AI dissertation" width="760" height="1076" loading="lazy" decoding="async"></div><span class="article-copy"><small>Research</small><h3>VFX, AI and labour</h3><p>A final-year dissertation on studio power, unionisation and AI pressure in visual-effects work.</p></span></a></article>
-          <article class="article-card" data-reveal style="--delay:70ms"><button type="button" data-kind="video" data-src="../assets/off-the-record-full.mp4" data-title="Off The Record" data-caption="A first-year live broadcast project produced at the University of York."><div class="article-media"><img src="./assets/study-broadcast.webp" alt="Off The Record broadcast poster" width="960" height="540" loading="lazy" decoding="async"></div><span class="article-copy"><small>Screen production</small><h3>Off The Record</h3><p>A first-year live broadcast project produced at the University of York.</p></span></button></article>
-          <article class="article-card" data-reveal style="--delay:140ms"><a href="https://www.jaworldwide.org/" target="_blank" rel="noopener"><div class="article-media matchpoint-graphic" role="img" aria-label="MatchPoint sports venue booking concept"><span class="matchpoint-ball" aria-hidden="true"></span><span class="matchpoint-word">match<span>point</span></span></div><span class="article-copy"><small>Student venture</small><h3>MatchPoint</h3><p>An IB-era venture for booking sports venues and matching teammates, covering marketing and market research.</p></span></a></article>
+          <article class="article-card" data-reveal style="--delay:70ms"><button type="button" data-kind="video" data-src="../assets/off-the-record-full.mp4" data-title="Off The Record" data-caption="A first-year live broadcast project produced at the University of York."><div class="article-media"><video data-autoplay-video data-src="./assets/off-the-record-preview.mp4" poster="./assets/study-broadcast.webp" muted loop playsinline autoplay preload="none" aria-label="Off The Record broadcast preview"></video></div><span class="article-copy"><small>Screen production</small><h3>Off The Record</h3><p>A first-year live broadcast project produced at the University of York.</p></span></button></article>
+          <article class="article-card" data-reveal style="--delay:140ms"><a href="https://www.jaworldwide.org/" target="_blank" rel="noopener"><div class="article-media matchpoint-media"><img src="../assets/logo-matchpoint-tight.png" alt="MatchPoint" width="240" height="170" loading="lazy" decoding="async"></div><span class="article-copy"><small>Student venture</small><h3>MatchPoint</h3><p>An IB-era venture for booking sports venues and matching teammates, covering marketing and market research.</p></span></a></article>
         </div>
       </section>
 
       <section class="contact" id="contact">
-        <div class="contact-inner" data-reveal><p class="section-label">Contact / 06</p><h2>Let’s start with the work.</h2><p>Based in London and open to roles across product, marketing, events and CRM.</p><div class="contact-actions"><a class="dark" href="mailto:mail@stavrosmavrommatis.com">Email Stavros</a><a href="https://www.linkedin.com/in/stavros-mavrommatis-54248920a" target="_blank" rel="noopener">LinkedIn</a></div></div>
+        <div class="contact-inner" data-reveal><p class="section-label">Contact / 06</p><h2>Great work starts with a conversation.</h2><p>London-based. Product, marketing and cultural events.</p><div class="contact-actions" aria-label="Contact links"><a href="mailto:mail@stavrosmavrommatis.com" aria-label="Email Stavros" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7"></path><path d="m3 7 9 6 9-6"></path></svg><span class="sr-only">Email</span></a><a href="https://www.linkedin.com/in/stavros-mavrommatis-54248920a" target="_blank" rel="noopener" aria-label="LinkedIn profile" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 11v5"></path><path d="M8 8v.01"></path><path d="M12 16v-5"></path><path d="M16 16v-3a2 2 0 1 0-4 0"></path><path d="M3 7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7"></path></svg><span class="sr-only">LinkedIn</span></a><a href="mailto:mail@stavrosmavrommatis.com?subject=Call%20request" aria-label="Arrange a call" title="Arrange a call"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"></path></svg><span class="sr-only">Arrange a call</span></a><a href="../assets/stavros-mavrommatis-cv.pdf" target="_blank" rel="noopener" aria-label="Open CV" title="CV"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M8 13h8"></path><path d="M8 17h6"></path></svg><span class="sr-only">CV</span></a></div></div>
         <footer class="footer-panel" data-reveal>
           <div><div class="footer-brand">Stavros.</div><p class="footer-note">Ideas, campaigns and experiences carried through from first shape to real delivery.</p></div>
-          <div class="footer-links"><div><small>Navigate</small><a href="#profile">Profile</a><a href="#work">Selected work</a><a href="#study">Study</a></div><div><small>Contact</small><a href="mailto:mail@stavrosmavrommatis.com">Email</a><a href="https://www.linkedin.com/in/stavros-mavrommatis-54248920a" target="_blank" rel="noopener">LinkedIn</a><span>London, UK</span></div></div>
+          <div class="footer-links"><div><small>Navigate</small><a href="#top">Home</a><a href="#work">Work</a><a href="#study">Study</a></div><div><small>Contact</small><a href="mailto:mail@stavrosmavrommatis.com">Email</a><a href="https://www.linkedin.com/in/stavros-mavrommatis-54248920a" target="_blank" rel="noopener">LinkedIn</a><span>London, UK</span></div></div>
           <div class="footer-meta"><span>Stavros Mavrommatis</span><span>Product · marketing · events</span><span>London, UK</span></div>
         </footer>
       </section>
@@ -860,27 +765,23 @@
     }, { root: observerRoot, threshold: .12, rootMargin: '0px 0px -6% 0px' });
     document.querySelectorAll('[data-reveal]').forEach((element) => revealObserver.observe(element));
 
-    const focusRange = document.getElementById('focus-range');
-    const focusValue = document.getElementById('focus-value');
-    const focusProof = document.getElementById('focus-proof');
-    const focusMetric = document.getElementById('focus-metric');
-    const focusMetricLabel = document.getElementById('focus-metric-label');
-    const focusOptions = [
-      { max: 33, label: 'Product', proof: 'Paid cultural-product development, event concepts, app testing, user feedback, reporting and operational iteration.', metric: '70', metricLabel: 'paid tickets in the first two months' },
-      { max: 66, label: 'Marketing', proof: 'Campaign concepts, Canva assets, CRM and email, partner listings, short video and AI-assisted visual production.', metric: '£1k+', metricLabel: 'revenue from first paid events' },
-      { max: 100, label: 'Events', proof: 'Venue communication, guest flows, partner coordination and on-the-day delivery across a growing cultural programme.', metric: '15+', metricLabel: 'cultural events delivered' }
-    ];
-    function updateFocus() {
-      const value = Number(focusRange.value);
-      const option = focusOptions.find((item) => value <= item.max) || focusOptions[2];
-      focusRange.style.setProperty('--range', `${value}%`);
-      focusValue.textContent = option.label;
-      focusProof.textContent = option.proof;
-      focusMetric.textContent = option.metric;
-      focusMetricLabel.textContent = option.metricLabel;
-    }
-    focusRange.addEventListener('input', updateFocus);
-    updateFocus();
+    const inlineVideoObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        video.muted = true;
+        if (reduceMotion.matches) {
+          video.pause();
+          return;
+        }
+        if (entry.isIntersecting && !video.src) {
+          video.src = video.dataset.src;
+          video.load();
+        }
+        if (entry.intersectionRatio >= .35) video.play().catch(() => {});
+        else video.pause();
+      });
+    }, { root: observerRoot, threshold: [0, .35, .7], rootMargin: '180px 0px' });
+    document.querySelectorAll('[data-autoplay-video]').forEach((video) => inlineVideoObserver.observe(video));
 
     const cinema = document.querySelector('.cinema');
     const cinemaVideo = cinema.querySelector('video');
