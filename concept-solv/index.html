@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Stavros Mavrommatis — Portfolio Concept</title>
+  <meta name="description" content="A framed, interactive portfolio for Stavros Mavrommatis: product, marketing, events and creative work.">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#dfff45">
+  <link rel="icon" href="../assets/favicon.png" type="image/png">
+  <style>
+    :root {
+      --ink: #162207;
+      --forest: #1d3108;
+      --forest-2: #29450d;
+      --lime: #dfff45;
+      --lime-soft: #efffc2;
+      --cream: #f5f3e9;
+      --paper: #fffef8;
+      --aqua: #d8f0ed;
+      --lilac: #e6e2f4;
+      --line: rgba(22, 34, 7, .16);
+      --muted: #69705f;
+      --radius: 22px;
+      --sans: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { background: #8ea39d; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: var(--sans);
+      background: #8ea39d;
+      overflow: hidden;
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background: rgba(18, 31, 14, .18);
+      backdrop-filter: saturate(.8);
+    }
+    button, input { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; text-decoration: none; }
+    img, video { display: block; max-width: 100%; }
+    button:focus-visible, a:focus-visible, input:focus-visible {
+      outline: 3px solid var(--lime);
+      outline-offset: 3px;
+    }
+
+    .ambient {
+      position: fixed;
+      inset: -34px;
+      z-index: -3;
+      background: center / cover no-repeat url("../assets/speaking-wide.jpg");
+      filter: blur(11px) saturate(.72) brightness(.82);
+      transform: scale(1.06);
+      transition: background-image .5s ease, filter .5s ease;
+    }
+
+    .stage { height: 100vh; padding: clamp(14px, 2vw, 28px); }
+    .portfolio-window {
+      position: relative;
+      width: min(100%, 1640px);
+      height: 100%;
+      margin: 0 auto;
+      overflow-y: auto;
+      overflow-x: hidden;
+      overscroll-behavior: contain;
+      scroll-behavior: smooth;
+      border: 1px solid rgba(255, 255, 255, .52);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: 0 32px 100px rgba(13, 28, 12, .32);
+      scrollbar-width: none;
+    }
+    .portfolio-window::-webkit-scrollbar { display: none; }
+
+    .progress-track {
+      position: fixed;
+      z-index: 20;
+      top: 11vh;
+      right: max(8px, calc((100vw - min(100vw - 56px, 1640px)) / 2 + 7px));
+      width: 3px;
+      height: 78vh;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .34);
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .progress-bar {
+      width: 100%;
+      height: 0;
+      border-radius: inherit;
+      background: var(--lime);
+      box-shadow: 0 0 18px rgba(223, 255, 69, .92);
+      transition: height .08s linear;
+    }
+
+    .nav {
+      position: absolute;
+      z-index: 10;
+      top: 20px;
+      left: 22px;
+      right: 22px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 16px;
+      color: white;
+    }
+    .nav-pills, .nav-actions { display: flex; align-items: center; gap: 4px; }
+    .nav-actions { justify-content: flex-end; }
+    .nav-pills {
+      width: max-content;
+      padding: 4px;
+      border: 1px solid rgba(255, 255, 255, .2);
+      border-radius: 999px;
+      background: rgba(29, 38, 24, .36);
+      backdrop-filter: blur(14px);
+    }
+    .nav-pills a, .nav-actions a {
+      min-height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 15px;
+      border-radius: 999px;
+      font-size: 11px;
+      transition: background .2s ease, color .2s ease, transform .2s ease;
+    }
+    .nav-pills a:hover { background: rgba(255, 255, 255, .18); }
+    .nav-actions a { background: rgba(255, 255, 255, .14); backdrop-filter: blur(12px); }
+    .nav-actions .primary { color: var(--ink); background: white; }
+    .nav-actions a:hover { transform: translateY(-1px); }
+    .brand {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -.04em;
+      text-shadow: 0 1px 15px rgba(0, 0, 0, .25);
+    }
+    .brand::before { content: "✦"; margin-right: 7px; color: var(--lime); }
+
+    .hero {
+      position: relative;
+      min-height: min(830px, 100%);
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      color: white;
+      background: #17220c;
+    }
+    .hero-media, .hero-media::after { position: absolute; inset: 0; }
+    .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: center 42%; }
+    .hero-media::after {
+      content: "";
+      background:
+        linear-gradient(90deg, rgba(8, 15, 5, .88) 0%, rgba(8, 15, 5, .2) 62%, rgba(8, 15, 5, .12) 100%),
+        linear-gradient(0deg, rgba(8, 15, 5, .75) 0%, transparent 52%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 270px;
+      align-items: end;
+      gap: clamp(28px, 5vw, 90px);
+      padding: clamp(120px, 17vh, 180px) clamp(26px, 5vw, 76px) clamp(34px, 6vh, 66px);
+    }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 18px;
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 30px; height: 1px; background: currentColor; opacity: .65; }
+    .hero h1 {
+      max-width: 920px;
+      margin: 0;
+      font-size: clamp(54px, 7.2vw, 116px);
+      font-weight: 500;
+      letter-spacing: -.075em;
+      line-height: .86;
+    }
+    .hero-copy { max-width: 650px; margin: 24px 0 0; color: rgba(255, 255, 255, .78); font-size: clamp(15px, 1.3vw, 19px); line-height: 1.45; }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 28px;
+      padding: 15px 20px;
+      border-radius: 999px;
+      color: var(--ink);
+      background: var(--lime);
+      font-size: 12px;
+      font-weight: 700;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .hero-cta span { font-size: 18px; transition: transform .2s ease; }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(223, 255, 69, .25); }
+    .hero-cta:hover span { transform: translateX(4px); }
+    .availability-card {
+      min-height: 206px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, .4);
+      border-radius: 14px;
+      color: var(--ink);
+      background: rgba(255, 255, 255, .9);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 20px 55px rgba(0, 0, 0, .2);
+    }
+    .availability-card small { font-size: 10px; color: #5c6253; text-transform: uppercase; letter-spacing: .08em; }
+    .availability-card strong { display: block; margin-top: 12px; font-size: 24px; line-height: 1.02; letter-spacing: -.045em; }
+    .availability-card .status { display: flex; align-items: center; gap: 8px; font-size: 11px; }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #81ac24; box-shadow: 0 0 0 5px rgba(129, 172, 36, .14); }
+
+    .logo-rail {
+      display: grid;
+      grid-template-columns: auto repeat(4, 1fr);
+      gap: 28px;
+      align-items: center;
+      min-height: 92px;
+      padding: 18px clamp(26px, 4.5vw, 70px);
+      border-bottom: 1px solid var(--line);
+      background: var(--paper);
+    }
+    .logo-rail > span:first-child { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: .08em; }
+    .logo-word { text-align: center; font-size: clamp(15px, 1.5vw, 22px); font-weight: 700; letter-spacing: -.04em; }
+
+    .section { padding: clamp(70px, 9vw, 140px) clamp(26px, 5vw, 82px); }
+    .section-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, .65fr); gap: 40px; align-items: end; margin-bottom: clamp(42px, 6vw, 82px); }
+    .section-tag { margin: 0 0 18px; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+    .section h2 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(48px, 6vw, 92px);
+      line-height: .9;
+      letter-spacing: -.07em;
+      font-weight: 500;
+    }
+    .section-intro { margin: 0; color: #626958; font-size: 15px; line-height: 1.55; }
+
+    .work-intro { background: var(--paper); }
+    .discipline-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .discipline-card {
+      position: relative;
+      min-height: 360px;
+      padding: clamp(26px, 3.3vw, 48px);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .discipline-card.aqua { background: var(--aqua); }
+    .discipline-card.dark { color: white; background: var(--forest); }
+    .discipline-card .index { font-size: 11px; opacity: .6; }
+    .discipline-card h3 { max-width: 420px; margin: 58px 0 16px; font-size: clamp(34px, 4vw, 62px); line-height: .94; letter-spacing: -.06em; font-weight: 500; }
+    .discipline-card p { max-width: 420px; margin: 0; color: inherit; opacity: .72; font-size: 14px; line-height: 1.5; }
+    .discipline-card .mini-stat {
+      position: absolute;
+      right: 26px;
+      top: 26px;
+      padding: 11px 14px;
+      border-radius: 999px;
+      color: var(--ink);
+      background: var(--lime);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .metrics { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 16px; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+    .metric { min-height: 160px; padding: 26px; border-right: 1px solid var(--line); background: var(--cream); }
+    .metric:last-child { border-right: 0; }
+    .metric strong { display: block; font-size: clamp(34px, 4vw, 58px); font-weight: 500; letter-spacing: -.06em; }
+    .metric span { display: block; max-width: 180px; margin-top: 10px; color: var(--muted); font-size: 11px; line-height: 1.35; text-transform: uppercase; letter-spacing: .05em; }
+
+    .projects { background: var(--cream); }
+    .project-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 16px; }
+    .project-card {
+      position: relative;
+      min-height: 510px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      border: 0;
+      border-radius: 16px;
+      padding: 0;
+      color: white;
+      background: #21300e;
+      text-align: left;
+      cursor: pointer;
+    }
+    .project-card.tall { grid-row: span 2; min-height: 760px; }
+    .project-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .55s cubic-bezier(.2,.7,.2,1); }
+    .project-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(9, 16, 5, .9), rgba(9, 16, 5, .06) 70%); }
+    .project-card:hover img { transform: scale(1.035); }
+    .project-copy { position: relative; z-index: 2; width: 100%; padding: 26px; }
+    .project-copy small { color: rgba(255, 255, 255, .68); font-size: 10px; text-transform: uppercase; letter-spacing: .08em; }
+    .project-copy h3 { max-width: 540px; margin: 9px 0 0; font-size: clamp(28px, 3vw, 48px); line-height: .95; letter-spacing: -.055em; font-weight: 500; }
+    .project-copy .open-mark { position: absolute; right: 26px; bottom: 26px; width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; color: var(--ink); background: var(--lime); font-size: 20px; }
+    .project-card.wide { grid-column: 1 / -1; min-height: 390px; }
+    .project-card.wide img { object-position: center 18%; }
+
+    .lens { background: var(--paper); }
+    .lens-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(30px, 7vw, 110px); align-items: center; }
+    .lens-copy h2 { margin-bottom: 24px; }
+    .lens-copy p { max-width: 490px; color: var(--muted); font-size: 15px; line-height: 1.55; }
+    .lens-copy .plain-link { display: inline-flex; margin-top: 18px; padding-bottom: 5px; border-bottom: 1px solid var(--ink); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; }
+    .lens-console { padding: clamp(28px, 4vw, 50px); border-radius: 16px; background: var(--lime); box-shadow: 0 26px 70px rgba(72, 95, 18, .16); }
+    .lens-console > small { display: block; padding-bottom: 14px; border-bottom: 1px solid rgba(22, 34, 7, .24); font-size: 11px; }
+    .focus-label { margin-top: 30px; color: #53602b; font-size: 11px; }
+    .focus-value { min-height: 1.1em; margin: 6px 0 28px; font-size: clamp(38px, 5vw, 72px); line-height: .9; letter-spacing: -.065em; font-weight: 600; }
+    input[type="range"] { width: 100%; accent-color: var(--ink); cursor: grab; }
+    input[type="range"]:active { cursor: grabbing; }
+    .range-labels { display: flex; justify-content: space-between; margin-top: 8px; font-size: 10px; color: #52602a; }
+    .focus-proof { min-height: 84px; margin: 30px 0 0; padding-top: 20px; border-top: 1px solid rgba(22, 34, 7, .24); font-size: 14px; line-height: 1.5; }
+
+    .cinema {
+      position: relative;
+      min-height: min(780px, 92vh);
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      color: white;
+      background: #10180a;
+    }
+    .cinema video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.78) brightness(.72); }
+    .cinema::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(8, 14, 4, .82), transparent 65%); }
+    .cinema-copy { position: relative; z-index: 2; max-width: 860px; padding: clamp(34px, 6vw, 90px); }
+    .cinema-copy p { margin: 0 0 14px; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+    .cinema-copy h2 { margin: 0; font-size: clamp(50px, 7vw, 108px); line-height: .87; letter-spacing: -.07em; font-weight: 500; }
+
+    .study { background: var(--paper); }
+    .study-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .study-card { overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: var(--cream); }
+    .study-card a, .study-card button { width: 100%; display: block; border: 0; padding: 0; background: transparent; color: inherit; text-align: left; cursor: pointer; }
+    .study-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #efeee6; }
+    .study-card.pdf img { object-fit: contain; padding: 22px; background: white; }
+    .study-copy { padding: 24px; }
+    .study-copy small { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: .08em; }
+    .study-copy h3 { margin: 12px 0 10px; font-size: 31px; line-height: .98; letter-spacing: -.05em; font-weight: 500; }
+    .study-copy p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+
+    .faq { color: white; background: var(--forest); }
+    .faq .section-tag, .faq .section-intro { color: rgba(255, 255, 255, .64); }
+    .faq-layout { display: grid; grid-template-columns: .72fr 1.28fr; gap: clamp(40px, 8vw, 130px); }
+    .faq-list { border-top: 1px solid rgba(255, 255, 255, .22); }
+    details { border-bottom: 1px solid rgba(255, 255, 255, .22); }
+    summary {
+      min-height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      list-style: none;
+      cursor: pointer;
+      font-size: 15px;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--lime); font-size: 22px; font-weight: 300; transition: transform .2s ease; }
+    details[open] summary::after { transform: rotate(45deg); }
+    details p { max-width: 690px; margin: -2px 40px 22px 0; color: rgba(255, 255, 255, .67); font-size: 13px; line-height: 1.55; }
+
+    .contact {
+      min-height: 530px;
+      display: grid;
+      place-items: center;
+      padding: clamp(70px, 11vw, 170px) 28px;
+      text-align: center;
+      background: linear-gradient(180deg, var(--paper), var(--lime-soft));
+    }
+    .contact-inner { max-width: 760px; }
+    .contact h2 { margin: 0; font-size: clamp(48px, 7vw, 98px); line-height: .9; letter-spacing: -.07em; font-weight: 500; }
+    .contact p { max-width: 560px; margin: 22px auto; color: var(--muted); font-size: 15px; line-height: 1.5; }
+    .contact-actions { display: flex; justify-content: center; gap: 9px; flex-wrap: wrap; }
+    .contact-actions a { min-height: 46px; display: inline-flex; align-items: center; padding: 0 18px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255, 255, 255, .56); font-size: 11px; font-weight: 700; }
+    .contact-actions .dark { color: white; background: var(--ink); }
+    .footer-line { display: flex; justify-content: space-between; gap: 20px; padding: 18px 24px; color: rgba(255, 255, 255, .68); background: #101708; font-size: 10px; text-transform: uppercase; letter-spacing: .06em; }
+
+    dialog {
+      width: min(1060px, calc(100vw - 34px));
+      max-height: calc(100dvh - 34px);
+      padding: 0;
+      overflow: auto;
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 18px;
+      color: white;
+      background: #11180b;
+      box-shadow: 0 32px 120px rgba(0, 0, 0, .6);
+    }
+    dialog::backdrop { background: rgba(8, 13, 5, .82); backdrop-filter: blur(8px); }
+    .dialog-bar { position: sticky; z-index: 2; top: 0; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 14px 16px; background: rgba(17, 24, 11, .9); backdrop-filter: blur(12px); }
+    .dialog-title { font-size: 12px; }
+    .dialog-close { min-width: 76px; min-height: 38px; border: 1px solid rgba(255, 255, 255, .24); border-radius: 999px; color: white; background: transparent; cursor: pointer; }
+    .dialog-media { display: grid; place-items: center; min-height: 300px; background: #070a05; }
+    .dialog-media img, .dialog-media video { width: 100%; max-height: 78vh; object-fit: contain; }
+    .dialog-caption { margin: 0; padding: 18px; color: rgba(255, 255, 255, .68); font-size: 13px; line-height: 1.5; }
+
+    @media (max-width: 980px) {
+      .hero-content, .section-head, .lens-layout, .faq-layout { grid-template-columns: 1fr; }
+      .availability-card { max-width: 320px; min-height: 160px; }
+      .logo-rail { grid-template-columns: repeat(2, 1fr); }
+      .logo-rail > span:first-child { grid-column: 1 / -1; text-align: center; }
+      .section-head { align-items: start; }
+      .discipline-grid, .project-grid { grid-template-columns: 1fr; }
+      .project-card.tall { grid-row: auto; min-height: 560px; }
+      .project-card.wide { grid-column: auto; }
+      .study-grid { grid-template-columns: 1fr 1fr; }
+      .metrics { grid-template-columns: 1fr 1fr; }
+      .metric:nth-child(2) { border-right: 0; }
+      .metric:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+    }
+
+    @media (max-width: 700px) {
+      body { overflow: auto; background: var(--paper); }
+      body::after, .ambient, .progress-track { display: none; }
+      .stage { height: auto; padding: 0; }
+      .portfolio-window { height: auto; border: 0; border-radius: 0; box-shadow: none; overflow: visible; }
+      .nav { position: absolute; top: 12px; left: 12px; right: 12px; grid-template-columns: 1fr auto; }
+      .nav-pills { display: none; }
+      .nav-actions a:first-child { display: none; }
+      .nav-actions a { min-height: 38px; }
+      .hero { min-height: 780px; }
+      .hero-media img { object-position: 56% center; }
+      .hero-media::after { background: linear-gradient(0deg, rgba(8, 15, 5, .93) 0%, rgba(8, 15, 5, .25) 72%); }
+      .hero-content { padding: 116px 20px 28px; gap: 28px; }
+      .hero h1 { font-size: clamp(51px, 16vw, 72px); line-height: .9; letter-spacing: -.065em; }
+      .hero-copy { font-size: 15px; }
+      .availability-card { width: 100%; max-width: none; min-height: 132px; }
+      .logo-rail { grid-template-columns: 1fr 1fr; gap: 18px; padding: 24px 20px; }
+      .logo-word { font-size: 17px; }
+      .section { padding: 76px 20px; }
+      .section-head { gap: 20px; margin-bottom: 38px; }
+      .section h2 { font-size: clamp(46px, 13.5vw, 64px); line-height: .92; letter-spacing: -.06em; }
+      .discipline-card { min-height: 330px; padding: 24px; }
+      .discipline-card h3 { margin-top: 70px; font-size: 42px; }
+      .discipline-card .mini-stat { right: 20px; top: 20px; }
+      .metrics, .study-grid { grid-template-columns: 1fr; }
+      .metric { border-right: 0; border-bottom: 1px solid var(--line); }
+      .metric:last-child { border-bottom: 0; }
+      .project-card, .project-card.tall, .project-card.wide { min-height: 500px; }
+      .project-copy { padding: 22px; }
+      .project-copy .open-mark { right: 20px; bottom: 20px; }
+      .lens-console { padding: 28px 22px; }
+      .focus-value { font-size: 48px; }
+      .cinema { min-height: 700px; }
+      .cinema video { object-position: 54% center; }
+      .cinema-copy { padding: 34px 20px; }
+      .footer-line { display: grid; grid-template-columns: 1fr 1fr; }
+      .footer-line span:last-child { grid-column: 1 / -1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html, .portfolio-window { scroll-behavior: auto; }
+      .ambient, .project-card img, .hero-cta, .hero-cta span, .progress-bar { transition: none; }
+      .cinema video { display: none; }
+      .cinema { background: linear-gradient(0deg, rgba(8, 14, 4, .72), rgba(8, 14, 4, .25)), url("../assets/filmpulse-kaleidoscope-behind-scenes-poster.jpg") center / cover; }
+    }
+  </style>
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <div class="progress-track" aria-hidden="true"><div class="progress-bar"></div></div>
+
+  <div class="stage">
+    <main class="portfolio-window" id="portfolio-window">
+      <nav class="nav" aria-label="Primary navigation">
+        <div class="nav-pills"><a href="#profile">Profile</a><a href="#work">Selected work</a><a href="#study">Study</a></div>
+        <a class="brand" href="#top" aria-label="Back to top">Stavros.</a>
+        <div class="nav-actions"><a href="../assets/stavros-mavrommatis-cv.pdf" target="_blank" rel="noopener">CV</a><a class="primary" href="mailto:mail@stavrosmavrommatis.com">Contact</a></div>
+      </nav>
+
+      <section class="hero" id="top" data-bg="../assets/speaking-wide.jpg">
+        <div class="hero-media"><img src="../assets/speaking-wide.jpg" alt="Stavros Mavrommatis speaking at the University of York"></div>
+        <div class="hero-content">
+          <div>
+            <p class="eyebrow">Product · marketing · events</p>
+            <h1>Ideas into campaigns, products and rooms.</h1>
+            <p class="hero-copy">I’m Stavros Mavrommatis, based in London. I work across paid cultural experiences, campaign creative, product testing and live delivery.</p>
+            <a class="hero-cta" href="#work">Explore selected work <span aria-hidden="true">→</span></a>
+          </div>
+          <aside class="availability-card" aria-label="Current availability">
+            <div><small>Based in</small><strong>London, UK</strong></div>
+            <div class="status"><span class="status-dot"></span>Open to the right next role</div>
+          </aside>
+        </div>
+      </section>
+
+      <div class="logo-rail" aria-label="Selected organisations and projects"><span>Work across</span><span class="logo-word">Pyxi</span><span class="logo-word">FilmPulse</span><span class="logo-word">University of York</span><span class="logo-word">MatchPoint</span></div>
+
+      <section class="section work-intro" id="profile" data-bg="../assets/pyxi-culture-edit-newspaper.jpg">
+        <div class="section-head">
+          <div><p class="section-tag">Profile / 01</p><h2>I work where the product, the message and the live experience meet.</h2></div>
+          <p class="section-intro">Recent work has covered a paid cultural events product at Pyxi: event research, campaign creative, CRM and email, partner assets, app testing, guest operations and reporting.</p>
+        </div>
+        <div class="discipline-grid">
+          <article class="discipline-card aqua"><span class="index">01 — Product + campaign</span><span class="mini-stat">70 paid tickets</span><h3>Turn an idea into something people can join.</h3><p>From shaping event concepts and testing the app flow to producing the assets and emails that brought the offer to life.</p></article>
+          <article class="discipline-card dark"><span class="index">02 — Live delivery</span><span class="mini-stat">15+ events</span><h3>Carry the detail all the way into the room.</h3><p>Venue communication, guest flows, partner coordination, feedback and on-the-day delivery across a growing cultural programme.</p></article>
+        </div>
+        <div class="metrics" aria-label="Selected results">
+          <div class="metric"><strong>15+</strong><span>Events run for Pyxi’s cultural programme</span></div>
+          <div class="metric"><strong>70</strong><span>Paid tickets in the first two months</span></div>
+          <div class="metric"><strong>£1k+</strong><span>Revenue from the first paid events</span></div>
+          <div class="metric"><strong>50+</strong><span>Attendees at a York screening</span></div>
+        </div>
+      </section>
+
+      <section class="section projects" id="work" data-bg="../assets/pyxi-first-ugc-poster.jpg">
+        <div class="section-head">
+          <div><p class="section-tag">Selected work / 02</p><h2>A small, useful mix of product and creative output.</h2></div>
+          <p class="section-intro">Campaign assets, email creative and short video produced for live work—not speculative portfolio filler. Open any card to inspect it.</p>
+        </div>
+        <div class="project-grid">
+          <button class="project-card tall" type="button" data-kind="image" data-src="../assets/pyxi-culture-edit-newspaper.jpg" data-title="Culture Edit campaign creative" data-caption="Print-style campaign creative for Culture Edit, Pyxi’s paid cultural events series.">
+            <img src="../assets/pyxi-culture-edit-newspaper.jpg" alt="Culture Edit campaign creative" loading="lazy">
+            <span class="project-copy"><small>Pyxi / Campaign system</small><h3>Culture Edit: a visual language for paid cultural events.</h3><span class="open-mark" aria-hidden="true">↗</span></span>
+          </button>
+          <button class="project-card" type="button" data-kind="video" data-src="../assets/pyxi-first-ugc.mp4" data-title="Pyxi social edit" data-caption="A short social edit used in Pyxi event marketing.">
+            <img src="../assets/pyxi-first-ugc-poster.jpg" alt="Poster frame from a Pyxi social edit" loading="lazy">
+            <span class="project-copy"><small>Pyxi / Short video</small><h3>Fast social creative built for live campaigns.</h3><span class="open-mark" aria-hidden="true">↗</span></span>
+          </button>
+          <button class="project-card" type="button" data-kind="video" data-src="../assets/pyxi-222-inspired-2.mp4" data-title="Jazz night video advert" data-caption="Short-form creative for a Pyxi jazz event.">
+            <img src="../assets/pyxi-222-inspired-2-poster.jpg" alt="Jazz night video advert poster" loading="lazy">
+            <span class="project-copy"><small>Pyxi / Event advert</small><h3>A compact video idea for a jazz-night offer.</h3><span class="open-mark" aria-hidden="true">↗</span></span>
+          </button>
+          <button class="project-card wide" type="button" data-kind="image" data-src="../assets/pyxi-ce-email.png" data-title="Culture Edit email" data-caption="Long-form CRM and email creative for the Culture Edit campaign.">
+            <img src="../assets/pyxi-ce-email.png" alt="Culture Edit email creative" loading="lazy">
+            <span class="project-copy"><small>Pyxi / CRM + email</small><h3>The campaign carried through to the inbox.</h3><span class="open-mark" aria-hidden="true">↗</span></span>
+          </button>
+        </div>
+      </section>
+
+      <section class="section lens" data-bg="../assets/pyxi-sky-garden-creative-poster.jpg">
+        <div class="lens-layout">
+          <div class="lens-copy"><p class="section-tag">Experience lens / 03</p><h2>One profile, several useful angles.</h2><p>Move the slider to see the evidence most relevant to product, marketing or events roles. The underlying work stays the same; the emphasis changes.</p><a class="plain-link" href="https://www.linkedin.com/in/stavros-mavrommatis-54248920a" target="_blank" rel="noopener">View LinkedIn ↗</a></div>
+          <div class="lens-console">
+            <small>Explore my experience</small>
+            <div class="focus-label">Current lens</div>
+            <div class="focus-value" id="focus-value" aria-live="polite">Marketing</div>
+            <input id="focus-range" type="range" min="0" max="100" value="50" aria-label="Choose product, marketing or events focus">
+            <div class="range-labels"><span>Product</span><span>Marketing</span><span>Events</span></div>
+            <p class="focus-proof" id="focus-proof">Campaign concepts, Canva assets, CRM and email, partner listings, short video and AI-assisted visual production.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cinema" data-bg="../assets/filmpulse-kaleidoscope-behind-scenes-poster.jpg">
+        <video src="../assets/filmpulse-kaleidoscope-behind-scenes.mp4" poster="../assets/filmpulse-kaleidoscope-behind-scenes-poster.jpg" muted loop playsinline preload="metadata" aria-label="Behind the scenes at the Kaleidoscope Film Festival"></video>
+        <div class="cinema-copy"><p>FilmPulse / Kaleidoscope Film Festival</p><h2>Creative work is better when it reaches a real audience.</h2></div>
+      </section>
+
+      <section class="section study" id="study" data-bg="../assets/vfx-ai-dissertation-first-page-preview.jpg">
+        <div class="section-head">
+          <div><p class="section-tag">Study + projects / 04</p><h2>Research, production and a student venture.</h2></div>
+          <p class="section-intro">Selected university work that supports the same story: making, organising and communicating creative ideas.</p>
+        </div>
+        <div class="study-grid">
+          <article class="study-card pdf"><a href="../assets/vfx-ai-dissertation-showcase.pdf" target="_blank" rel="noopener"><img src="../assets/vfx-ai-dissertation-first-page-preview.jpg" alt="First page preview of the VFX and AI dissertation" loading="lazy"><div class="study-copy"><small>Research</small><h3>VFX, AI and labour</h3><p>A final-year dissertation on studio power, unionisation and AI pressure in visual-effects work.</p></div></a></article>
+          <article class="study-card"><button type="button" data-kind="video" data-src="../assets/off-the-record-full.mp4" data-title="Off The Record" data-caption="A first-year live broadcast project produced at the University of York."><img src="../assets/off-the-record-poster.jpg" alt="Off The Record broadcast poster" loading="lazy"><span class="study-copy"><small>Screen production</small><h3>Off The Record</h3><p>A first-year live broadcast project produced at York.</p></span></button></article>
+          <article class="study-card"><a href="https://www.jaworldwide.org/" target="_blank" rel="noopener"><img src="../assets/filmpulse-kaleidoscope-behind-scenes-poster.jpg" alt="Behind the scenes at a FilmPulse screening" loading="lazy"><div class="study-copy"><small>Student venture</small><h3>MatchPoint</h3><p>An IB-era venture for booking sports venues and matching teammates, covering marketing and market research.</p></div></a></article>
+        </div>
+      </section>
+
+      <section class="section faq" data-bg="../assets/off-the-record-poster.jpg">
+        <div class="faq-layout">
+          <div><p class="section-tag">Quick facts / 05</p><h2>Frequently asked before the first call.</h2><p class="section-intro" style="margin-top:22px">The concise version of location, tools, role fit and availability.</p></div>
+          <div class="faq-list">
+            <details open><summary>What roles are you looking for?</summary><p>Product, marketing, events and CRM roles where I can combine organisation, creative production and practical delivery.</p></details>
+            <details><summary>Which tools do you use?</summary><p>Canva, Adobe creative tools, DaVinci Resolve, CRM and email platforms, spreadsheets, AI-assisted creative workflows and modern product collaboration tools.</p></details>
+            <details><summary>Where are you based?</summary><p>London, UK. I’m open to London-based and hybrid work, with flexibility for the right role.</p></details>
+            <details><summary>Can I see the full CV?</summary><p>Yes. The CV link in the header opens the current PDF, and the contact button starts an email directly.</p></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" data-bg="../assets/speaking-wide.jpg">
+        <div class="contact-inner"><p class="section-tag">Contact / 06</p><h2>Let’s start with the work.</h2><p>Based in London and open to roles across product, marketing, events and CRM.</p><div class="contact-actions"><a class="dark" href="mailto:mail@stavrosmavrommatis.com">Email Stavros</a><a href="https://www.linkedin.com/in/stavros-mavrommatis-54248920a" target="_blank" rel="noopener">LinkedIn</a></div></div>
+      </section>
+      <div class="footer-line"><span>Stavros Mavrommatis</span><span>London, UK</span><span>Product · marketing · events</span></div>
+    </main>
+  </div>
+
+  <dialog id="lightbox" aria-label="Expanded portfolio item">
+    <div class="dialog-bar"><span class="dialog-title" id="dialog-title"></span><button class="dialog-close" type="button">Close</button></div>
+    <div class="dialog-media" id="dialog-media"></div>
+    <p class="dialog-caption" id="dialog-caption"></p>
+  </dialog>
+
+  <script>
+    const scroller = document.getElementById('portfolio-window');
+    const progress = document.querySelector('.progress-bar');
+    const ambient = document.querySelector('.ambient');
+    const cinemaVideo = document.querySelector('.cinema video');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    function updateProgress() {
+      const max = scroller.scrollHeight - scroller.clientHeight;
+      progress.style.height = `${max > 0 ? (scroller.scrollTop / max) * 100 : 0}%`;
+    }
+    scroller.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+
+    const observedSections = document.querySelectorAll('[data-bg]');
+    const sectionObserver = new IntersectionObserver((entries) => {
+      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible && ambient) ambient.style.backgroundImage = `url("${visible.target.dataset.bg}")`;
+    }, { root: scroller, threshold: [0.25, 0.5, 0.75] });
+    observedSections.forEach((section) => sectionObserver.observe(section));
+
+    const cinemaObserver = new IntersectionObserver((entries) => {
+      const visible = entries[0]?.isIntersecting;
+      if (!cinemaVideo || reduceMotion.matches) return;
+      if (visible) cinemaVideo.play().catch(() => {}); else cinemaVideo.pause();
+    }, { root: scroller, threshold: .35 });
+    if (cinemaVideo) cinemaObserver.observe(cinemaVideo.closest('.cinema'));
+
+    const focusRange = document.getElementById('focus-range');
+    const focusValue = document.getElementById('focus-value');
+    const focusProof = document.getElementById('focus-proof');
+    const focusOptions = [
+      { max: 33, label: 'Product', proof: 'Paid cultural-product development, event concepts, app testing, user feedback, reporting and operational iteration.' },
+      { max: 66, label: 'Marketing', proof: 'Campaign concepts, Canva assets, CRM and email, partner listings, short video and AI-assisted visual production.' },
+      { max: 100, label: 'Events', proof: 'Venue communication, guest flows, partner coordination and on-the-day delivery across 15+ cultural events.' }
+    ];
+    function updateFocus() {
+      const value = Number(focusRange.value);
+      const option = focusOptions.find((item) => value <= item.max) || focusOptions[2];
+      focusValue.textContent = option.label;
+      focusProof.textContent = option.proof;
+    }
+    focusRange.addEventListener('input', updateFocus);
+    updateFocus();
+
+    const dialog = document.getElementById('lightbox');
+    const dialogMedia = document.getElementById('dialog-media');
+    const dialogTitle = document.getElementById('dialog-title');
+    const dialogCaption = document.getElementById('dialog-caption');
+
+    function closeDialog() {
+      const video = dialogMedia.querySelector('video');
+      if (video) { video.pause(); video.removeAttribute('src'); video.load(); }
+      dialogMedia.replaceChildren();
+      if (dialog.open) dialog.close();
+    }
+
+    document.querySelectorAll('[data-kind]').forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const kind = trigger.dataset.kind;
+        const element = document.createElement(kind === 'video' ? 'video' : 'img');
+        element.src = trigger.dataset.src;
+        if (kind === 'video') {
+          element.controls = true;
+          element.autoplay = true;
+          element.playsInline = true;
+          element.preload = 'metadata';
+        } else {
+          element.alt = trigger.dataset.title || 'Expanded portfolio item';
+        }
+        dialogTitle.textContent = trigger.dataset.title || '';
+        dialogCaption.textContent = trigger.dataset.caption || '';
+        dialogMedia.replaceChildren(element);
+        dialog.showModal();
+        if (kind === 'video') element.play().catch(() => {});
+      });
+    });
+    document.querySelector('.dialog-close').addEventListener('click', closeDialog);
+    dialog.addEventListener('cancel', (event) => { event.preventDefault(); closeDialog(); });
+    dialog.addEventListener('click', (event) => { if (event.target === dialog) closeDialog(); });
+
+    window.addEventListener('resize', updateProgress);
+  </script>
+</body>
+</html>
